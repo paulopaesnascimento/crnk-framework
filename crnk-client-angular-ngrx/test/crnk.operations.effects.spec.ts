@@ -1,33 +1,33 @@
-import {getTestBed, TestBed} from '@angular/core/testing';
+import { getTestBed, TestBed } from '@angular/core/testing';
 
 import 'rxjs/add/operator/merge';
-import {ActionReducerMap, Store, StoreModule} from '@ngrx/store';
+import { ActionReducerMap, Store, StoreModule } from '@ngrx/store';
 
 
-import {ApiApplyInitAction, NgrxJsonApiService, NgrxJsonApiStore, NgrxJsonApiZone, Resource} from 'ngrx-json-api';
+import { ApiApplyInitAction, NgrxJsonApiService, NgrxJsonApiStore, NgrxJsonApiZone, Resource } from 'ngrx-json-api';
 
-import {NGRX_JSON_API_CONFIG, selectorsFactory, serviceFactory} from 'ngrx-json-api/src/module';
+import { NGRX_JSON_API_CONFIG, selectorsFactory, serviceFactory } from 'ngrx-json-api/src/module';
 
-import {initialNgrxJsonApiState} from 'ngrx-json-api/src/reducers';
+import { initialNgrxJsonApiState } from 'ngrx-json-api/src/reducers';
 
 
-import {updateStoreDataFromPayload,} from 'ngrx-json-api/src/utils';
+import { updateStoreDataFromPayload, } from 'ngrx-json-api/src/utils';
 
-import {ApiApplySuccessAction, NgrxJsonApiActionTypes} from 'ngrx-json-api/src/actions';
+import { ApiApplySuccessAction, NgrxJsonApiActionTypes } from 'ngrx-json-api/src/actions';
 
-import {testPayload} from './crnk.operations.spec.utils'
+import { testPayload } from './crnk.operations.spec.utils'
 
-import {MOCK_JSON_API_PROVIDERS} from './crnk.operations.spec.mock';
-import {OperationsEffects} from '../operations/crnk.operations.effects';
-import {MockBackend, MockConnection} from '@angular/http/testing';
-import {BaseRequestOptions, Http, RequestMethod, Response, ResponseOptions, XHRBackend} from '@angular/http';
-import {provideMockActions} from '@ngrx/effects/testing';
-import {EffectsModule} from '@ngrx/effects';
-import {HttpClientTestingModule} from '@angular/common/http/testing';
-import {HttpClientModule} from '@angular/common/http';
-import {NgModule} from '@angular/core';
-import {ReplaySubject} from 'rxjs/ReplaySubject';
-import {NgrxJsonApiSelectors} from 'ngrx-json-api/src/selectors';
+import { MOCK_JSON_API_PROVIDERS } from './crnk.operations.spec.mock';
+import { OperationsEffects } from '../operations/crnk.operations.effects';
+import { MockBackend, MockConnection } from '@angular/http/testing';
+import { BaseRequestOptions, Http, RequestMethod, Response, ResponseOptions, XHRBackend } from '@angular/http';
+import { provideMockActions } from '@ngrx/effects/testing';
+import { EffectsModule } from '@ngrx/effects';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { HttpClientModule } from '@angular/common/http';
+import { NgModule } from '@angular/core';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { NgrxJsonApiSelectors } from 'ngrx-json-api/src/selectors';
 
 
 export const testReducer: ActionReducerMap<any> = {};
@@ -68,7 +68,7 @@ describe('OperationsEffects', () => {
 		TestBed.configureTestingModule({
 			imports: [
 				TestingModule,
-				StoreModule.forRoot(testReducer, {initialState: initialState}),
+				StoreModule.forRoot(testReducer, { initialState: initialState }),
 				EffectsModule.forRoot([OperationsEffects])
 			],
 			providers: [

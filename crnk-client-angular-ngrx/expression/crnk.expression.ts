@@ -8,7 +8,7 @@
  *     <li>{@link Path}: property member access</li>
  * </ul>
  */
-import {toQueryPath} from '../binding';
+import { toQueryPath } from '../binding';
 
 export interface Expression<T> {
 

@@ -19,8 +19,8 @@ import {
 	ValidatorFn,
 	Validators
 } from '@angular/forms';
-import {CrnkControl} from './crnk.expression.form.model.base';
-import {ExpressionDefaultValueAccessorDirective} from './crnk.expression.form.model.accessor';
+import { CrnkControl } from './crnk.expression.form.model.base';
+import { ExpressionDefaultValueAccessorDirective } from './crnk.expression.form.model.accessor';
 
 
 export function normalizeValidator(validator: ValidatorFn | Validator): ValidatorFn {
@@ -69,7 +69,7 @@ export function setUpControl(control: FormControl, dir: CrnkControl): void {
 	dir.valueAccessor.registerOnChange((newValue: any) => {
 		dir.viewToModelUpdate(newValue);
 		control.markAsDirty();
-		control.setValue(newValue, {emitModelToViewChange: false});
+		control.setValue(newValue, { emitModelToViewChange: false });
 	});
 
 	// touched

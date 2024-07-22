@@ -7,8 +7,8 @@ import {
 	QTypedOneResourceRelationship,
 	StringPath
 } from './crnk';
-import {DefaultPagedMetaInformation} from './default.paged.meta.information';
-import {DefaultPagedLinksInformation} from './information/default.paged.links.information';
+import { DefaultPagedMetaInformation } from './default.paged.meta.information';
+import { DefaultPagedLinksInformation } from './information/default.paged.links.information';
 import {
 	Projects,
 	QProjects
@@ -118,10 +118,10 @@ export let createEmptySchedule = function(id: string): Schedule {
 		attributes: {
 		},
 		relationships: {
-			taskSet: {data: []},
-			project: {data: null},
-			projects: {data: []},
-			status: {data: null},
+			taskSet: { data: [] },
+			project: { data: null },
+			projects: { data: [] },
+			status: { data: null },
 		},
 	};
 };

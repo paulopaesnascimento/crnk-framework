@@ -1,4 +1,4 @@
-import {Directive, forwardRef} from "@angular/core";
+import { Directive, forwardRef } from "@angular/core";
 import {
 	CheckboxRequiredValidator,
 	EmailValidator,
@@ -19,7 +19,7 @@ export const EXPRESSION_REQUIRED_VALIDATOR: any = {
 	selector:
 		':not([type=checkbox])[required][crnkFormExpression],:not([type=checkbox])[required][crnkExpression]',
 	providers: [EXPRESSION_REQUIRED_VALIDATOR],
-	host: {'[attr.required]': 'required ? "" : null'}
+	host: { '[attr.required]': 'required ? "" : null' }
 })
 export class ExpressionRequiredValidatorDirective extends RequiredValidator {
 }
@@ -48,7 +48,7 @@ export const EXPRESSION_CHECKBOX_REQUIRED_VALIDATOR: any = {
 	selector:
 		'input[type=checkbox][required][crnkFormExpression],input[type=checkbox][required][crnkExpression]',
 	providers: [EXPRESSION_CHECKBOX_REQUIRED_VALIDATOR],
-	host: {'[attr.required]': 'required ? "" : null'}
+	host: { '[attr.required]': 'required ? "" : null' }
 })
 export class ExpressionCheckboxRequiredValidatorDirective extends CheckboxRequiredValidator {
 }
@@ -63,7 +63,7 @@ export const EXPRESSION_MIN_LENGTH_VALIDATOR: any = {
 @Directive({
 	selector: '[minlength][crnkFormExpression],[minlength][crnkExpression]',
 	providers: [EXPRESSION_MIN_LENGTH_VALIDATOR],
-	host: {'[attr.minlength]': 'minlength ? minlength : null'}
+	host: { '[attr.minlength]': 'minlength ? minlength : null' }
 })
 export class ExpressionMinLengthValidatorDirective extends MinLengthValidator {
 }
@@ -77,7 +77,7 @@ export const EXPRESSION_MAX_LENGTH_VALIDATOR: any = {
 @Directive({
 	selector: '[maxlength][crnkFormExpression],[maxlength][crnkExpression]',
 	providers: [EXPRESSION_MAX_LENGTH_VALIDATOR],
-	host: {'[attr.maxlength]': 'maxlength ? maxlength : null'}
+	host: { '[attr.maxlength]': 'maxlength ? maxlength : null' }
 })
 export class ExpressionMaxLengthValidatorDirective extends MaxLengthValidator {
 
@@ -93,7 +93,7 @@ export const EXPRESSION_PATTERN_VALIDATOR: any = {
 @Directive({
 	selector: '[pattern][crnkFormExpression],[pattern][crnkExpression]',
 	providers: [EXPRESSION_PATTERN_VALIDATOR],
-	host: {'[attr.pattern]': 'pattern ? pattern : null'}
+	host: { '[attr.pattern]': 'pattern ? pattern : null' }
 })
 export class ExpressionPatternValidatorDirective extends PatternValidator {
 

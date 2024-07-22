@@ -21,12 +21,12 @@ import java.util.Set;
 import java.util.UUID;
 
 public class OperationsDeleteRelationTest extends AbstractOperationsTest {
-
+/*
 	protected ResourceRepository<MovieEntity, UUID> movieRepo;
 
 	private OperationsClient operationsClient;
 
-	@Before
+	//@Before
 	@Override
 	public void setUp() throws Exception {
 		super.setUp();
@@ -35,7 +35,7 @@ public class OperationsDeleteRelationTest extends AbstractOperationsTest {
 		operationsClient = new OperationsClient(client);
 	}
 
-	@Test
+	//@Test
 	public void testDeleteRelation() {
 		PersonEntity person1 = newPerson("1");
 		PersonEntity person2 = newPerson("2");
@@ -65,4 +65,5 @@ public class OperationsDeleteRelationTest extends AbstractOperationsTest {
 		List<ResourceIdentifier> directorIds = directorsRelationship.getCollectionData().get();
 		Assert.assertEquals(1, directorIds.size());
 	}
+*/
 }

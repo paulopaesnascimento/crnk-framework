@@ -1,20 +1,30 @@
 plugins {
 	id 'java'
 	id 'java-library'
+	id 'org.springframework.boot' version '3.1.4'
+	id 'io.spring.dependency-management'
 }
 
 dependencies {
+        bootJar {
+    	enabled = false
+	}
+
+    	jar {
+    	enabled = true
+	}
 	api project(':crnk-core')
 	api project(':crnk-reactive')
 	api 'jakarta.servlet:jakarta.servlet-api:6.0.0'
 	api 'org.slf4j:slf4j-api:2.0.9'
+        implementation 'org.springframework.boot:spring-boot-starter-test'
 
 	testImplementation  project(':crnk-reactive')
 	testImplementation  project(':crnk-test')
 	testImplementation  project(':crnk-client')
 	testImplementation  'jakarta.servlet:jakarta.servlet-api:6.0.0'
 
-	testImplementation  'org.springframework.boot:spring-boot-starter-web'
 	testImplementation  'org.springframework.boot:spring-boot-starter-test'
+	testImplementation  'org.springframework.boot:spring-boot-starter-web'
 	testImplementation  'net.javacrumbs.json-unit:json-unit:1.5.5'
 }

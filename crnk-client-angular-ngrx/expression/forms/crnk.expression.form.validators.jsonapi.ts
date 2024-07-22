@@ -1,7 +1,7 @@
-import {Directive, forwardRef} from '@angular/core';
-import {AbstractControl, NG_VALIDATORS, ValidationErrors, Validator} from '@angular/forms';
-import {Path} from '../crnk.expression';
-import {ResourceError, StoreResource} from 'ngrx-json-api';
+import { Directive, forwardRef } from '@angular/core';
+import { AbstractControl, NG_VALIDATORS, ValidationErrors, Validator } from '@angular/forms';
+import { Path } from '../crnk.expression';
+import { ResourceError, StoreResource } from 'ngrx-json-api';
 import * as _ from 'lodash';
 
 export const RESOURCE_VALIDATOR: any = {

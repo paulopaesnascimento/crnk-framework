@@ -1,15 +1,26 @@
 plugins {
 	id 'java'
 	id 'java-library'
+	id 'org.springframework.boot' version '3.1.4'
+	id 'io.spring.dependency-management'
 }
 
 dependencies {
+	bootJar {
+    	enabled = false
+	}
+
+    	jar {
+    	enabled = true
+	}
+
 	implementation project(':crnk-core')
+	//implementation project(':crnk-setup:crnk-setup-spring-boot3')
 	compileOnly 'io.opentracing:opentracing-api:0.31.0'
 	testImplementation  'io.opentracing:opentracing-api:0.31.0'
 	testImplementation  project(':crnk-test')
 	testImplementation  project(':crnk-setup:crnk-setup-servlet')
-
-	testImplementation  'org.springframework:spring-test:6.0.12'
-	testImplementation  'org.springframework:spring-web:6.0.12'
+	
+	testImplementation  'org.springframework.boot:spring-boot-starter-web'
+	testImplementation  'org.springframework.boot:spring-boot-starter-test'
 }

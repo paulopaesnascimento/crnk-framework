@@ -1,6 +1,6 @@
-import {Observable} from "rxjs/Observable";
-import {Subject} from "rxjs/Subject";
-import {Subscription} from "rxjs/Subscription";
+import { Observable } from "rxjs/Observable";
+import { Subject } from "rxjs/Subject";
+import { Subscription } from "rxjs/Subscription";
 import * as _ from "lodash";
 import "rxjs/add/operator/zip";
 import "rxjs/add/operator/do";
@@ -9,7 +9,7 @@ import "rxjs/add/operator/distinct";
 import "rxjs/add/operator/switch";
 import "rxjs/add/operator/finally";
 import "rxjs/add/operator/share";
-import {NgForm} from "@angular/forms";
+import { NgForm } from "@angular/forms";
 import {
 	getNgrxJsonApiZone,
 	NGRX_JSON_API_DEFAULT_ZONE,
@@ -21,9 +21,9 @@ import {
 	ResourceIdentifier,
 	StoreResource
 } from 'ngrx-json-api';
-import {Store} from "@ngrx/store";
-import {getNgrxJsonApiStore$, getStoreData$} from './crnk.binding.utils';
-import {ReplaySubject} from "rxjs/ReplaySubject";
+import { Store } from "@ngrx/store";
+import { getNgrxJsonApiStore$, getStoreData$ } from './crnk.binding.utils';
+import { ReplaySubject } from "rxjs/ReplaySubject";
 
 
 interface ResourceFieldRef {
@@ -164,11 +164,11 @@ export class FormBinding {
 			.filter(it => !it.loading)
 			.map(it => it.data as StoreResource)
 			.filter(it => !_.isEmpty(it)) // ignore deletions
-			.distinctUntilChanged(function (a, b) {
+			.distinctUntilChanged(function(a, b) {
 				return _.isEqual(a, b);
 			})
 			.do(() => this.checkSubscriptions())
-			.do(resource => this.primaryResourceId = {type: resource.type, id: resource.id})
+			.do(resource => this.primaryResourceId = { type: resource.type, id: resource.id })
 			.withLatestFrom(this.store, (resource, state) => {
 				const jsonapiState = getNgrxJsonApiZone(state, zoneId);
 				this._storeDataSnapshot = jsonapiState.data;
@@ -213,7 +213,7 @@ export class FormBinding {
 				.withLatestFrom(this.config.form.valueChanges, (valid, values) => values)
 				.filter(it => this.config.form.dirty || this.wasDirty)
 				.debounceTime(20)
-				.distinctUntilChanged(function (a, b) {
+				.distinctUntilChanged(function(a, b) {
 					return _.isEqual(a, b);
 				})
 				.do(it => this.wasDirty = true);
@@ -292,9 +292,9 @@ export class FormBinding {
 
 	public delete() {
 		this.zone.deleteResource({
-				resourceId: this.primaryResourceId,
-				toRemote: true
-			}
+			resourceId: this.primaryResourceId,
+			toRemote: true
+		}
 		);
 	}
 
@@ -359,7 +359,7 @@ export class FormBinding {
 		const patchedResources = _.values(patchedResourceMap);
 		for (const patchedResource of patchedResources) {
 			const cleanedPatchedResource = this.clearPrimeNgMarkers(patchedResource);
-			this.zone.patchResource({resource: cleanedPatchedResource});
+			this.zone.patchResource({ resource: cleanedPatchedResource });
 		}
 	}
 

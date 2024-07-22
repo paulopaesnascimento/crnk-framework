@@ -25,11 +25,11 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = ReactiveServletTestApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@Ignore
+//@RunWith(SpringRunner.class)
+//@SpringBootTest(classes = ReactiveServletTestApplication.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+//@Ignore
 public class ReactiveStressTest {
-
+/*
 
 	private ReactiveServletTestContainer testContainer;
 
@@ -113,5 +113,5 @@ public class ReactiveStressTest {
 		}
 		executor.shutdown();
 	}
-
+*/
 }

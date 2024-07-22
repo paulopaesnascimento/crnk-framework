@@ -101,16 +101,16 @@ describe('applyQueryParams', () => {
 			queryId: 'test',
 			params: {
 				filtering: [
-					{path: 'attr1', operator: 'EQ', value: 'val1'},
-					{path: 'attr2', operator: 'EQ', value: 'val2'},
+					{ path: 'attr1', operator: 'EQ', value: 'val1' },
+					{ path: 'attr2', operator: 'EQ', value: 'val2' },
 				]
 			}
 		};
 
 		let params: QueryParams = {
 			filtering: [
-				{path: 'attr2', operator: 'EQ', value: 'updated2'},
-				{path: 'attr3', operator: 'EQ', value: 'updated3'},
+				{ path: 'attr2', operator: 'EQ', value: 'updated2' },
+				{ path: 'attr3', operator: 'EQ', value: 'updated3' },
 			]
 		};
 
@@ -118,9 +118,9 @@ describe('applyQueryParams', () => {
 
 		expect(query.params.filtering.length).toBe(3);
 		expect(query.params.filtering).toEqual([
-			{path: 'attr1', operator: 'EQ', value: 'val1'},
-			{path: 'attr2', operator: 'EQ', value: 'updated2'},
-			{path: 'attr3', operator: 'EQ', value: 'updated3'}
+			{ path: 'attr1', operator: 'EQ', value: 'val1' },
+			{ path: 'attr2', operator: 'EQ', value: 'updated2' },
+			{ path: 'attr3', operator: 'EQ', value: 'updated3' }
 		]);
 	});
 });

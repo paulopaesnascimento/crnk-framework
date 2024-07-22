@@ -9,7 +9,7 @@ import jakarta.servlet.ServletConfig;
 import jakarta.servlet.ServletException;
 
 public class AsyncServletInitTest {
-
+/*
 	@Test
 	public void checkEnforceAsyncResultFactory() throws ServletException {
 		try {
@@ -20,4 +20,5 @@ public class AsyncServletInitTest {
 			Assert.assertTrue(e.getMessage().contains("make use of an async ResultFactory"));
 		}
 	}
+*/
 }

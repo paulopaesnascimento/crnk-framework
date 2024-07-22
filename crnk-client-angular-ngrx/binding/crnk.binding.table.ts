@@ -223,9 +223,9 @@ export class DataTableBinding {
 
 		if (!_.isEqual(query, this.latestQuery)) {
 			this.zone.putQuery({
-					query: query,
-					fromServer: this.config.fromServer
-				}
+				query: query,
+				fromServer: this.config.fromServer
+			}
 			);
 			this.latestQuery = query;
 		}

@@ -1,9 +1,9 @@
 import * as _ from 'lodash';
 
-import {Injectable, Injector} from '@angular/core';
-import {Action, Store} from '@ngrx/store';
-import {Actions, Effect, ofType} from '@ngrx/effects';
-import {Observable} from 'rxjs/Observable';
+import { Injectable, Injector } from '@angular/core';
+import { Action, Store } from '@ngrx/store';
+import { Actions, Effect, ofType } from '@ngrx/effects';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/concatAll';
@@ -15,7 +15,7 @@ import 'rxjs/add/operator/switchMapTo';
 import 'rxjs/add/operator/take';
 import 'rxjs/add/operator/toArray';
 import 'rxjs/add/operator/withLatestFrom';
-import {Headers, Http, Request, RequestMethod, RequestOptions} from '@angular/http';
+import { Headers, Http, Request, RequestMethod, RequestOptions } from '@angular/http';
 import {
 	ApiApplyInitAction,
 	Document, getNgrxJsonApiZone, NgrxJsonApiActionTypes, NgrxJsonApiService, NgrxJsonApiStore, Query, Resource,
@@ -34,8 +34,8 @@ import {
 	ApiPostSuccessAction,
 } from 'ngrx-json-api/src/actions';
 
-import {getPendingChanges} from 'ngrx-json-api/src/utils';
-import {NgrxJsonApi} from 'ngrx-json-api/src/api';
+import { getPendingChanges } from 'ngrx-json-api/src/utils';
+import { NgrxJsonApi } from 'ngrx-json-api/src/api';
 
 
 interface Operation {
@@ -65,65 +65,65 @@ export class OperationsEffects {
 	@Effect() applyResources$ = this.actions$.pipe(
 		ofType(NgrxJsonApiActionTypes.API_APPLY_INIT)
 			.withLatestFrom(this.store, (action, state: any) => {
-			const initAction = action as ApiApplyInitAction;
-			const zoneId = initAction.zoneId;
-			const ngrxstore = getNgrxJsonApiZone(state, zoneId);
-			const payload = initAction.payload;
-			const pending: Array<StoreResource> = getPendingChanges(ngrxstore.data, payload.ids, payload.include, false);
+				const initAction = action as ApiApplyInitAction;
+				const zoneId = initAction.zoneId;
+				const ngrxstore = getNgrxJsonApiZone(state, zoneId);
+				const payload = initAction.payload;
+				const pending: Array<StoreResource> = getPendingChanges(ngrxstore.data, payload.ids, payload.include, false);
 
-			if (pending.length === 0) {
-				return Observable.of(new ApiApplySuccessAction([], zoneId));
-			}
+				if (pending.length === 0) {
+					return Observable.of(new ApiApplySuccessAction([], zoneId));
+				}
 
-			const operations: Array<Operation> = [];
-			for (const pendingChange of pending) {
-				operations.push(this.toOperation(pendingChange));
-			}
+				const operations: Array<Operation> = [];
+				for (const pendingChange of pending) {
+					operations.push(this.toOperation(pendingChange));
+				}
 
-			const requestOptions = new RequestOptions({
-				method: RequestMethod.Patch,
-				url: this.ngrxJsonApi['config']['apiUrl'] + '/operations/',
-				body: JSON.stringify(operations)
-			});
-
-			const request = new Request(requestOptions.merge({
-				headers: this.headers
-			}));
-
-			return this.http.request(request)
-				.map(res => res.json() as Array<OperationResponse>)
-				.map(operationResponses => {
-					if (!_.isArray(operationResponses)) {
-						throw new Error('expected array as operations response');
-					}
-
-					const actions: Array<Action> = [];
-					for (const index of Object.keys(operationResponses)) {
-						const operationResponse = operationResponses[index];
-						const pendingChange = pending[index];
-						actions.push(this.toResponseAction(pendingChange, operationResponse, zoneId));
-					}
-					return this.toApplyAction(actions, zoneId);
-				})
-				.catch(errorResponse => {
-					// transform http to json api error
-					const error: ResourceError = {
-						status: errorResponse.status.toString(),
-						code: errorResponse.statusText
-					};
-					const errors: Array<ResourceError> = [error];
-
-					const actions: Array<Action> = [];
-					for (const pendingChange of pending) {
-						const operationResponse: OperationResponse = {
-							errors: errors,
-							status: 500
-						} as OperationResponse;
-						actions.push(this.toResponseAction(pendingChange, operationResponse, zoneId));
-					}
-					return Observable.of(new ApiApplyFailAction(actions, zoneId));
+				const requestOptions = new RequestOptions({
+					method: RequestMethod.Patch,
+					url: this.ngrxJsonApi['config']['apiUrl'] + '/operations/',
+					body: JSON.stringify(operations)
 				});
-		})
+
+				const request = new Request(requestOptions.merge({
+					headers: this.headers
+				}));
+
+				return this.http.request(request)
+					.map(res => res.json() as Array<OperationResponse>)
+					.map(operationResponses => {
+						if (!_.isArray(operationResponses)) {
+							throw new Error('expected array as operations response');
+						}
+
+						const actions: Array<Action> = [];
+						for (const index of Object.keys(operationResponses)) {
+							const operationResponse = operationResponses[index];
+							const pendingChange = pending[index];
+							actions.push(this.toResponseAction(pendingChange, operationResponse, zoneId));
+						}
+						return this.toApplyAction(actions, zoneId);
+					})
+					.catch(errorResponse => {
+						// transform http to json api error
+						const error: ResourceError = {
+							status: errorResponse.status.toString(),
+							code: errorResponse.statusText
+						};
+						const errors: Array<ResourceError> = [error];
+
+						const actions: Array<Action> = [];
+						for (const pendingChange of pending) {
+							const operationResponse: OperationResponse = {
+								errors: errors,
+								status: 500
+							} as OperationResponse;
+							actions.push(this.toResponseAction(pendingChange, operationResponse, zoneId));
+						}
+						return Observable.of(new ApiApplyFailAction(actions, zoneId));
+					});
+			})
 	).flatMap(actions => actions);
 
 

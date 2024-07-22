@@ -58,7 +58,6 @@ if (JavaVersion.current().isJava8Compatible()) {
 gradle.beforeProject { Project project ->
 	project.with {
 		apply plugin: "eclipse"
-
 		apply plugin: 'maven-publish'
 
 		def docs = project.name == 'crnk-documentation'
@@ -96,8 +95,23 @@ gradle.beforeProject { Project project ->
 				}
 
 				configurations.all {
-					exclude group: "org.slf4j", module: "slf4j-log4j12"
-					exclude group: "log4j", module: "log4j"
+					//exclude group: "org.slf4j", module: "slf4j-log4j12"
+					//exclude group: "log4j", module: "log4j"
+					exclude module: "spring-boot-starter-logging"
+    					exclude module: "logback-classic"
+    					resolutionStrategy {
+    						// fail eagerly on version conflict (includes transitive dependencies)
+    						// e.g. multiple different versions of the same dependency (group and name are equal)
+    						//failOnVersionConflict()
+
+    						// prefer modules that are part of this build (multi-project or composite build) over external modules
+    						//preferProjectModules()
+
+    						// force certain versions of dependencies (including transitive)
+    						//  *append new forced modules:
+    						force 'com.squareup.okhttp3:okhttp:4.12.0'
+    					}
+					//apply plugin: 'ca.cuttlerslade.analyse'
 				}
 
 				apply plugin: 'io.spring.dependency-management'

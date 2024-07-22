@@ -22,21 +22,21 @@ import { Store } from '@ngrx/store';
 import { Expression } from '../expression';
 
 
-export const getNgrxJsonApiStore$ = function (state$: Store<any>): Observable<NgrxJsonApiStore> {
-	return state$.select('NgrxJsonApi').map(it => it ? it['api'] : undefined) as  Observable<NgrxJsonApiStore>;
+export const getNgrxJsonApiStore$ = function(state$: Store<any>): Observable<NgrxJsonApiStore> {
+	return state$.select('NgrxJsonApi').map(it => it ? it['api'] : undefined) as Observable<NgrxJsonApiStore>;
 };
 
-export const getStoreData$ = function (state$: Store<NgrxJsonApiStore>): Observable<NgrxJsonApiStoreData> {
-	return state$.select('data') as  Observable<NgrxJsonApiStoreData>;
+export const getStoreData$ = function(state$: Store<NgrxJsonApiStore>): Observable<NgrxJsonApiStoreData> {
+	return state$.select('data') as Observable<NgrxJsonApiStoreData>;
 };
 
-export const waitWhileLoading = function () {
+export const waitWhileLoading = function() {
 	return (result$: Observable<QueryResult>) => {
 		return result$.filter(it => !it.loading);
 	};
 };
 
-export const assumeNoError = function () {
+export const assumeNoError = function() {
 	return (result$: Observable<QueryResult>) => {
 		return result$.do(it => {
 			if (!_.isEmpty(it.errors)) {
@@ -46,7 +46,7 @@ export const assumeNoError = function () {
 	};
 };
 
-export const applyQueryParams = function (baseQuery: Query, additionalParams: QueryParams) {
+export const applyQueryParams = function(baseQuery: Query, additionalParams: QueryParams) {
 	if (!baseQuery.params) {
 		baseQuery.params = {};
 	}

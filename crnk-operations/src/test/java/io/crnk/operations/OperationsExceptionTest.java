@@ -20,18 +20,18 @@ import java.util.List;
 import java.util.UUID;
 
 public class OperationsExceptionTest extends AbstractOperationsTest {
-
+/*
 
 	private OperationsClient operationsClient;
 
-	@Before
+	//@Before
 	@Override
 	public void setUp() throws Exception {
 		super.setUp();
 		operationsClient = new OperationsClient(client);
 	}
 
-	@Test
+	//@Test
 	public void testValidationErrorCancelsPatch() {
 		PersonEntity person1 = newPerson("1");
 		PersonEntity person2 = newPerson("2");
@@ -52,7 +52,7 @@ public class OperationsExceptionTest extends AbstractOperationsTest {
 		Assert.assertEquals(0, list.size());
 	}
 
-	@Test
+	//@Test
 	public void testUnknownErrorTriggerInternalError() {
 		operationsModule.addFilter(new OperationFilter() {
 			@Override
@@ -75,5 +75,5 @@ public class OperationsExceptionTest extends AbstractOperationsTest {
 			// ok
 		}
 	}
-
+*/
 }

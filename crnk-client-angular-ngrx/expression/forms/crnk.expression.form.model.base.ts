@@ -1,4 +1,4 @@
-import {Input, SimpleChanges} from '@angular/core';
+import { Input, SimpleChanges } from '@angular/core';
 import {
 	AsyncValidatorFn,
 	ControlContainer,
@@ -8,8 +8,8 @@ import {
 	Validator,
 	ValidatorFn
 } from '@angular/forms';
-import {composeAsyncValidators, composeValidators, isPropertyUpdated} from './crnk.expression.form.utils';
-import {Path} from '../crnk.expression';
+import { composeAsyncValidators, composeValidators, isPropertyUpdated } from './crnk.expression.form.utils';
+import { Path } from '../crnk.expression';
 
 
 const resolvedPromise = Promise.resolve(null);
@@ -58,7 +58,7 @@ export abstract class CrnkControl extends NgControl {
 	private _updateValue(value: any): void {
 		resolvedPromise.then(
 			() => {
-				this.control.setValue(value, {emitViewToModelChange: false});
+				this.control.setValue(value, { emitViewToModelChange: false });
 			});
 	}
 

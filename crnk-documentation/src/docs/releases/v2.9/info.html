@@ -5,12 +5,15 @@ Any application following the convention recommended the past year should not ha
 
 <h4>Early support for faceted search</h4>
 
-Faceted search is used by many UIs to allow users to quickly navigate data sets. For example, virtually every online shop makes
+Faceted search is used by many UIs to allow users to quickly navigate data sets. For example, virtually every online
+shop makes
 use of this feature to show product categories and the number of products in that category. Those categories, denoted as
-facets, have a label, a set of values and a count for each value. Facets may also depend on each other, whereas later facets are filtered by former ones.
+facets, have a label, a set of values and a count for each value. Facets may also depend on each other, whereas later
+facets are filtered by former ones.
 <p>
 	With FacetModule Crnk provides an out-of-the-box solution to implemented faceted search. For more information have a
-	look at the new chapter in the <a href="http://www.crnk.io/releases/v2.9/documentation/#_faceted_search">documentation</a>.
+	look at the new chapter in the <a
+		href="http://www.crnk.io/releases/v2.9/documentation/#_faceted_search">documentation</a>.
 
 <h4>Documentation updates</h4>
 
@@ -61,7 +64,8 @@ specifications.
 
 <h4>Relationships loading handled according to JSON API specification</h4>
 
-The specification from <a href="http://jsonapi.org/format/#fetching-relationships">http://jsonapi.org/format/#fetching-relationships</a>
+The specification from <a
+	href="http://jsonapi.org/format/#fetching-relationships">http://jsonapi.org/format/#fetching-relationships</a>
 mandates two relationship links:
 
 <ul>
@@ -77,7 +81,8 @@ mandates two relationship links:
 	</li>
 </ul>
 
-With this release, Crnk properly handles GET request of self links by no longer returning the entire resources, but only the type and id:
+With this release, Crnk properly handles GET request of self links by no longer returning the entire resources, but only
+the type and id:
 
 <pre class="prettyprint">
 HTTP/1.1 200 OK
@@ -94,7 +99,8 @@ Content-Type: application/vnd.api+json
   }
 </pre>
 
-Behind the scenes, the same relationship repository implementation is called. The QuerySpec will specify that only the identifier is required through
+Behind the scenes, the same relationship repository implementation is called. The QuerySpec will specify that only the
+identifier is required through
 the <i>includedFields</i> property.
 
 <h4>QuerySpecVisitor</h4>
@@ -106,13 +112,16 @@ to easily modify attribute paths within a QuerySpc.
 
 <h4>Removal of deprecated Repository annotations</h4>
 
-The annotation-based repositories have been deprecated since Crnk 0.x and have now been removed. A switch to the Interface-based repositories like
+The annotation-based repositories have been deprecated since Crnk 0.x and have now been removed. A switch to the
+Interface-based repositories like
 ResourceRepositoryV2 is quickly implemented if somewhere still necessary.
 
 <h4>Optimized QueryParams code base</h4>
 
-QueryParams has been deprecated since Crnk 0.x. So far both QuerySpec and QueryParams have been first-class citizens within Crnk. With this release, support
-for QueryParams has been refactored and remains support through the QuerySpec-to-QueryParams conversion process. That has been the recommended and
+QueryParams has been deprecated since Crnk 0.x. So far both QuerySpec and QueryParams have been first-class citizens
+within Crnk. With this release, support
+for QueryParams has been refactored and remains support through the QuerySpec-to-QueryParams conversion process. That
+has been the recommended and
 only meaningful setup for a long time. The big benefit is a much lighter and more robust code base in the area.
 <p>
 	Future release either drop QueryParams support or move it out into a dedicated module. Contributes in the area would
@@ -150,8 +159,10 @@ typescriptGen{
 
 <h4>new property: crnk.enforceIdName</h4>
 
-If set to true, it will name all `@JsonApiId` annotated fields as `id` on the rest layer (sorting, filtering, etc.) regardless of its Java name.
-By default this is not enabled for historic reasons. But enabling it more closely reflects the JSON API specification and is recommended to do so.
+If set to true, it will name all `@JsonApiId` annotated fields as `id` on the rest layer (sorting, filtering, etc.)
+regardless of its Java name.
+By default this is not enabled for historic reasons. But enabling it more closely reflects the JSON API specification
+and is recommended to do so.
 It likely will be enabled in Crnk 3 by default.
 
 <h4>@JpaResource annotation deprecated</h4>
@@ -194,30 +205,37 @@ and can be used in the same manner by registering it to the JpaModuleConfig.
 
 InMemoryEvaluator gained a new constructor that takes a ResourceRegistry. This allows the use of resource information
 when accessing resources. This allows its use with more customized resources and relationships, like the use of
-@JsonApiRelationId and custom ResourceFieldAccessors instead of just basic plain Java beans. Note that QuerySpec.apply(...)
+@JsonApiRelationId and custom ResourceFieldAccessors instead of just basic plain Java beans. Note that
+QuerySpec.apply(...)
 does not have access to a ResourceRegistry and, consequently, continues to use the traditional behavior.
 
 <h4>Logging in crnk-meta</h4>
 
-Various logging statements have been reduced to level TRACE to make the general DEBUG log level of io.crnk a bit less noisy.
+Various logging statements have been reduced to level TRACE to make the general DEBUG log level of io.crnk a bit less
+noisy.
 
 <h4>@JsonApiRelationId supported by crnk-validation</h4>
 
-Validation errors on relationship identifiers annotated with @JsonApiRelationId now correctly carry the relationship name (without the
+Validation errors on relationship identifiers annotated with @JsonApiRelationId now correctly carry the relationship
+name (without the
 typical "id" suffix) in the JSON API error.
 
 
 <h4>Simplified BulkRelationshipRepositoryV2</h4>
 
-The BulkRelationshipRepositoryV2 interface implements two default methods that allow the implementation of a single findTargets method.
-A future V3 version of the interface will likely move this into crnk-core to keep the interface this simple without having to rely
+The BulkRelationshipRepositoryV2 interface implements two default methods that allow the implementation of a single
+findTargets method.
+A future V3 version of the interface will likely move this into crnk-core to keep the interface this simple without
+having to rely
 on default methods.
 
 <h4>simplified crnk-data-jpa setup in Spring Boot</h4>
 
-The exposeAll behavior automatically backs-off if a repository is registered manually. Setting the properly to false is no longer necessary.
+The exposeAll behavior automatically backs-off if a repository is registered manually. Setting the properly to false is
+no longer necessary.
 
 <h4>Early security checks for bulk operations</h4>
 
-The operations module now checks any bulk operations against configured configured role-based authorization rules (SecurityModule) and other ResourceFilter.
+The operations module now checks any bulk operations against configured configured role-based authorization rules
+(SecurityModule) and other ResourceFilter.
 It allows to catch security violations early before accessing any repositories.

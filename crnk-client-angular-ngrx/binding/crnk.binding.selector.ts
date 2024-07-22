@@ -1,5 +1,5 @@
-import {Subject} from "rxjs/Subject";
-import {Observable} from "rxjs/Observable";
+import { Subject } from "rxjs/Subject";
+import { Observable } from "rxjs/Observable";
 import * as _ from "lodash";
 import "rxjs/add/operator/zip";
 import "rxjs/add/operator/do";
@@ -10,7 +10,7 @@ import {
 	FilteringParam, ManyQueryResult, NGRX_JSON_API_DEFAULT_ZONE, NgrxJsonApiService, NgrxJsonApiZoneService, Query,
 	ResourceIdentifier
 } from "ngrx-json-api";
-import {CrnkBindingUtils} from "./crnk.binding.utils";
+import { CrnkBindingUtils } from "./crnk.binding.utils";
 
 export interface SelectorBindingConfig {
 	query: Query;

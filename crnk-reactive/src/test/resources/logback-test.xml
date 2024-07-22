@@ -9,11 +9,11 @@
 		</encoder>
 	</appender>
 
-	<logger name="io.crnk" level="DEBUG"/>
-	<logger name="reactor" level="DEBUG"/>
+	<logger name="io.crnk" level="DEBUG" />
+	<logger name="reactor" level="DEBUG" />
 
 	<root level="WARN">
-		<appender-ref ref="CONSOLE"/>
+		<appender-ref ref="CONSOLE" />
 	</root>
 </configuration>
 

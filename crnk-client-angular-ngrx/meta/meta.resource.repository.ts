@@ -98,11 +98,11 @@ export let createEmptyMetaResourceRepository = function(id: string): MetaResourc
 		id: id,
 		type: 'meta/resourceRepository',
 		relationships: {
-			resourceType: {data: null},
-			listMetaType: {data: null},
-			listLinksType: {data: null},
-			parent: {data: null},
-			children: {data: []},
+			resourceType: { data: null },
+			listMetaType: { data: null },
+			listLinksType: { data: null },
+			parent: { data: null },
+			children: { data: [] },
 		},
 	};
 };

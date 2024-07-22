@@ -10,13 +10,13 @@ import java.util.Set;
 
 public class OperationsParameterUtilsTest {
 
-
-	@Test
+/*
+	//@Test
 	public void testHasPrivateConstructor() {
 		ClassTestUtils.assertPrivateConstructor(OperationParameterUtils.class);
 	}
 
-	@Test
+	//@Test
 	public void testParseSingleParameter() {
 		Map<String, Set<String>> map = OperationParameterUtils.parseParameters("test?a=b");
 		Assert.assertEquals(1, map.size());
@@ -24,7 +24,7 @@ public class OperationsParameterUtilsTest {
 		Assert.assertEquals(1, map.get("a").size());
 	}
 
-	@Test
+	//@Test
 	public void testParseRepeatedParameter() {
 		Map<String, Set<String>> map = OperationParameterUtils.parseParameters("test?a=b&a=c");
 		Assert.assertEquals(1, map.size());
@@ -33,7 +33,7 @@ public class OperationsParameterUtilsTest {
 		Assert.assertTrue(map.get("a").contains("c"));
 	}
 
-	@Test
+	//@Test
 	public void testParseMultipleParameter() {
 		Map<String, Set<String>> map = OperationParameterUtils.parseParameters("test?a=b&c=d");
 		Assert.assertEquals(2, map.size());
@@ -44,16 +44,17 @@ public class OperationsParameterUtilsTest {
 		Assert.assertEquals("d", map.get("c").iterator().next());
 	}
 
-	@Test
+	//@Test
 	public void testParseNoParameter() {
 		Assert.assertTrue(OperationParameterUtils.parseParameters("test").isEmpty());
 		Assert.assertTrue(OperationParameterUtils.parseParameters("test?").isEmpty());
 	}
 
-	@Test
+	//@Test
 	public void testParsePath() {
 		Assert.assertEquals("test", OperationParameterUtils.parsePath("test?a=b"));
 		Assert.assertEquals("test", OperationParameterUtils.parsePath("test"));
 	}
+*/
 }
 

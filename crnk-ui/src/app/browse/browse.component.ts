@@ -1,10 +1,10 @@
 import * as _ from "lodash";
-import {TreeNode} from "primeng/primeng";
-import {Http, Response, RequestOptions, Headers} from "@angular/http";
-import {LocalStorageService} from "angular-2-local-storage";
-import {BrowseService, BrowseUtils, BrowsePreferencesService} from "./browse.service";
+import { TreeNode } from "primeng/primeng";
+import { Http, Response, RequestOptions, Headers } from "@angular/http";
+import { LocalStorageService } from "angular-2-local-storage";
+import { BrowseService, BrowseUtils, BrowsePreferencesService } from "./browse.service";
 import { DOCUMENT } from '@angular/platform-browser';
-import {Component, Inject} from "@angular/core";
+import { Component, Inject } from "@angular/core";
 
 
 @Component({
@@ -24,7 +24,7 @@ export class BrowseComponent {
 
 	public availableRelationships: Array<any> = [];
 
-	public documentDisplayTypes: Array<any> = [{label: 'Tree', value: 'tree'}, {label: 'JSON', value: 'json'}];
+	public documentDisplayTypes: Array<any> = [{ label: 'Tree', value: 'tree' }, { label: 'JSON', value: 'json' }];
 
 
 	public response: Response = null;
@@ -158,11 +158,11 @@ export class BrowseComponent {
 		}
 	}
 
-	private documentToText(nodes: Array < TreeNode >) {
+	private documentToText(nodes: Array<TreeNode>) {
 		return JSON.stringify(this.documentToJson(nodes), null, 4);
 	}
 
-	private documentToJson(nodes: Array < TreeNode >) {
+	private documentToJson(nodes: Array<TreeNode>) {
 		let object = {};
 		for (let node of nodes) {
 			if (node.data.type == 'array') {
@@ -195,7 +195,7 @@ export class BrowseComponent {
 	}
 
 
-	public get embeddedMode(){
+	public get embeddedMode() {
 		const href = this.document.location.href;
 		const suffix = "browse/#/";
 		return href.endsWith(suffix);
@@ -208,7 +208,7 @@ export class BrowseComponent {
 		}
 		else {
 			let url = this.baseUrl;
-			if(!url.endsWith("/")){
+			if (!url.endsWith("/")) {
 				url = url + "/";
 			}
 			url = url + 'meta/resource?sort=resourceType&page[limit]=1000';
@@ -217,7 +217,7 @@ export class BrowseComponent {
 				let data = response.json()['data'] as Array<any>;
 				this.availableTypes = [];
 				this.availableTypes.push(...data.map(it => {
-					return {label: it.attributes.resourceType, value: it.attributes.resourceType};
+					return { label: it.attributes.resourceType, value: it.attributes.resourceType };
 				}));
 				this.availableTypes.push({
 					label: null,
@@ -225,7 +225,7 @@ export class BrowseComponent {
 				});
 
 				let selectedType = this.preferences.query.type;
-				if(selectedType && _.indexOf(data.map(it => it.attributes.resourceType), selectedType) == -1){
+				if (selectedType && _.indexOf(data.map(it => it.attributes.resourceType), selectedType) == -1) {
 					this.preferences.query.type = null;
 					this.preferencesService.savePreferences(this.preferences);
 				}
@@ -245,7 +245,7 @@ export class BrowseComponent {
 		else {
 			let includes = 'attributes.type.elementType';
 			let url = this.baseUrl;
-			if(!url.endsWith("/")){
+			if (!url.endsWith("/")) {
 				url = url + "/";
 			}
 			url = url + 'meta/resource?include=' + includes + '&page[limit]=1000';
@@ -268,9 +268,9 @@ export class BrowseComponent {
 
 				let relationships = this.metaAttributes.filter(it => it.attributes.association && it.type == 'meta/resourceField')
 					.map(it => {
-						return {label: it.attributes.name, value: it.attributes.name};
+						return { label: it.attributes.name, value: it.attributes.name };
 					});
-				let nullValue = {label: '', value: null};
+				let nullValue = { label: '', value: null };
 				this.availableRelationships = _.concat([nullValue], relationships);
 			}, error => {
 				this.metaResource = null;
@@ -292,7 +292,7 @@ export class BrowseComponent {
 			this.metaAttributes.filter(it => !it.attributes.association).map(it => '"' + it.attributes.name + '": null'),
 			',\n            ');
 		let relationships = _.join(this.metaAttributes.filter(it => it.attributes.association)
-				.map(it => '"' + it.attributes.name + '": {"data": ' + (this.isCollection(it) ? '[]' : 'null') + '}'),
+			.map(it => '"' + it.attributes.name + '": {"data": ' + (this.isCollection(it) ? '[]' : 'null') + '}'),
 			',\n            ');
 
 
@@ -342,7 +342,7 @@ export class BrowseComponent {
 			'Content-Type': 'application/vnd.api+json',
 			'Accept': 'application/vnd.api+json',
 		});
-		return new RequestOptions({headers: headers});
+		return new RequestOptions({ headers: headers });
 	}
 
 	public patch() {
@@ -378,7 +378,7 @@ export class BrowseComponent {
 	}
 
 
-	public get(newQuery ?: any) {
+	public get(newQuery?: any) {
 		if (!_.isEmpty(this.baseUrl) && !_.isEmpty(this.preferences.query.type)) {
 			this.httpMethod = 'GET';
 
@@ -425,8 +425,8 @@ export class BrowseComponent {
 
 	public getUrl(query: any): string {
 		return _.join([this.utils.normalize(this.baseUrl, '/'), this.utils.normalize(query.type, '/'),
-			this.utils.normalize(query.id, '/'), this.utils.normalize(query.relationship, '/'),
-			(query.parameters ? "?" + query.parameters : "")], '');
+		this.utils.normalize(query.id, '/'), this.utils.normalize(query.relationship, '/'),
+		(query.parameters ? "?" + query.parameters : "")], '');
 	}
 
 
@@ -483,8 +483,8 @@ export class BrowseComponent {
 		this.parameterSuggestions = this.service.suggestParameters(this.metaResource, event);
 	}
 
-	private toNodes(object: any): Array < TreeNode > {
-		let nodes: Array < TreeNode > = [];
+	private toNodes(object: any): Array<TreeNode> {
+		let nodes: Array<TreeNode> = [];
 		for (let key in object) {
 			if (key == 'resultIds' || key == 'loading' || key == 'query') {
 				continue; // TODO
@@ -599,7 +599,7 @@ export class BrowseComponent {
 		return nodes;
 	}
 
-	private updatedExpandedStates(nodes ?) {
+	private updatedExpandedStates(nodes?) {
 		let root = !nodes;
 		if (root) {
 			nodes = [...this.documentNodes];

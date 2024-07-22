@@ -2,7 +2,7 @@ import {
 	BeanPath,
 	StringPath
 } from '../expression/';
-import {QMetaElement} from './meta.element';
+import { QMetaElement } from './meta.element';
 import {
 	MetaType,
 	QMetaType

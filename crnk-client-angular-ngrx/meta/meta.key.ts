@@ -87,9 +87,9 @@ export let createEmptyMetaKey = function(id: string): MetaKey {
 		attributes: {
 		},
 		relationships: {
-			elements: {data: []},
-			parent: {data: null},
-			children: {data: []},
+			elements: { data: [] },
+			parent: { data: null },
+			children: { data: [] },
 		},
 	};
 };

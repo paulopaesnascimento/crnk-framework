@@ -84,10 +84,10 @@ export let createEmptyMetaMapType = function(id: string): MetaMapType {
 		id: id,
 		type: 'meta/mapType',
 		relationships: {
-			keyType: {data: null},
-			elementType: {data: null},
-			parent: {data: null},
-			children: {data: []},
+			keyType: { data: null },
+			elementType: { data: null },
+			parent: { data: null },
+			children: { data: [] },
 		},
 	};
 };

@@ -120,10 +120,10 @@ export let createEmptyMetaAttribute = function(id: string): MetaAttribute {
 		attributes: {
 		},
 		relationships: {
-			type: {data: null},
-			oppositeAttribute: {data: null},
-			parent: {data: null},
-			children: {data: []},
+			type: { data: null },
+			oppositeAttribute: { data: null },
+			parent: { data: null },
+			children: { data: [] },
 		},
 	};
 };

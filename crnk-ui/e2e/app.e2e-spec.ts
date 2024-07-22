@@ -1,6 +1,6 @@
-import {MoapMovieMgmtCliPage} from "./app.po";
+import { MoapMovieMgmtCliPage } from "./app.po";
 
-describe('moap-movie-mgmt-cli App', function () {
+describe('moap-movie-mgmt-cli App', function() {
 	let page: MoapMovieMgmtCliPage;
 
 	beforeEach(() => {

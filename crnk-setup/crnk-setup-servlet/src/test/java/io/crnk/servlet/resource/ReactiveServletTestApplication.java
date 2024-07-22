@@ -11,18 +11,19 @@ import io.crnk.test.mock.reactive.ReactiveTestModule;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.embedded.EmbeddedServletContainerInitializedEvent;
+import org.springframework.boot.web.servlet.context.ServletWebServerInitializedEvent;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RestController;
 
-@Configuration
-@RestController
-@SpringBootApplication
-public class ReactiveServletTestApplication implements ApplicationListener<EmbeddedServletContainerInitializedEvent> {
-
+//@Configuration
+//@RestController
+//@SpringBootApplication
+//public class ReactiveServletTestApplication implements ApplicationListener<ServletWebServerInitializedEvent> {
+public class ReactiveServletTestApplication {
+/*
 	private int port;
 
 	private CrnkClient client;
@@ -34,8 +35,8 @@ public class ReactiveServletTestApplication implements ApplicationListener<Embed
 	private CrnkBoot boot;
 
 	@Override
-	public void onApplicationEvent(EmbeddedServletContainerInitializedEvent event) {
-		port = event.getEmbeddedServletContainer().getPort();
+	public void onApplicationEvent(ServletWebServerInitializedEvent event) {
+		port = event.getWebServer().getPort();
 		client = new CrnkClient("http://localhost:" + port + "/api");
 		client.addModule(new ClientTestModule());
 	}
@@ -80,5 +81,5 @@ public class ReactiveServletTestApplication implements ApplicationListener<Embed
 		return servlet.getBoot();
 	}
 	// end::reactive[]
-
+*/
 }

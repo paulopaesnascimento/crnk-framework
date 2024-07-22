@@ -8,14 +8,19 @@ dependencies {
 	compileOnly project(':crnk-meta')
 	compileOnly project(':crnk-client')
 	compileOnly 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+	compileOnly 'jakarta.el:jakarta.el-api:5.0.0'
+	compileOnly 'org.glassfish:jakarta.el:5.0.0-M1'
 
 	testImplementation  project(':crnk-client')
 	testImplementation  project(':crnk-setup:crnk-setup-rs')
 	testImplementation  project(':crnk-test')
 	testImplementation  project(':crnk-meta')
 	testImplementation  group: 'org.hibernate', name: 'hibernate-validator', version: '8.0.1.Final'
-	testImplementation  group: 'org.springframework', name: 'spring-orm', version: '6.0.12'
-	testImplementation  group: 'org.springframework', name: 'spring-context', version: '6.0.12'
-	testImplementation  group: 'org.springframework', name: 'spring-test', version: '6.0.12'
+	testImplementation  group: 'org.springframework', name: 'spring-orm', version: '6.1.8'
+	testImplementation  group: 'org.springframework', name: 'spring-context', version: '6.1.8'
+	testImplementation  group: 'org.springframework', name: 'spring-test', version: '6.1.8'
 	testImplementation  group: 'jakarta.platform', name: 'jakarta.jakartaee-api', version: '10.0.0'
+	testImplementation  group: 'org.glassfish', name: 'jakarta.el', version: '5.0.0-M1'
+	testImplementation  group: 'jakarta.el', name: 'jakarta.el-api', version: '5.0.0'
+	
 }

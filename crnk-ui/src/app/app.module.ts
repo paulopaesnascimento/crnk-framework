@@ -1,10 +1,10 @@
-import {BrowserModule} from "@angular/platform-browser";
-import {NgModule} from "@angular/core";
-import {FormsModule} from "@angular/forms";
-import {HttpModule} from "@angular/http";
-import {RouterModule} from "@angular/router";
-import {AppComponent} from "./app.component";
-import {BrowseComponent} from "./browse";
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
+import { HttpModule } from "@angular/http";
+import { RouterModule } from "@angular/router";
+import { AppComponent } from "./app.component";
+import { BrowseComponent } from "./browse";
 import {
 	InputTextModule,
 	InputTextareaModule,
@@ -20,12 +20,12 @@ import {
 	PanelModule,
 	TreeTableModule
 } from "primeng/primeng";
-import {LocalStorageModule} from "angular-2-local-storage";
-import {ROUTES} from "./app.routes";
-import {SelectButtonModule} from "primeng/components/selectbutton/selectbutton";
-import {ToggleButtonModule} from "primeng/components/togglebutton/togglebutton";
-import {BrowseService, BrowseUtils, BrowsePreferencesService} from "./browse/browse.service";
-import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import { LocalStorageModule } from "angular-2-local-storage";
+import { ROUTES } from "./app.routes";
+import { SelectButtonModule } from "primeng/components/selectbutton/selectbutton";
+import { ToggleButtonModule } from "primeng/components/togglebutton/togglebutton";
+import { BrowseService, BrowseUtils, BrowsePreferencesService } from "./browse/browse.service";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 
 @NgModule({
@@ -38,7 +38,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 		FormsModule,
 		HttpModule,
 		BrowserAnimationsModule,
-		RouterModule.forRoot(ROUTES, {useHash: true}),
+		RouterModule.forRoot(ROUTES, { useHash: true }),
 
 		LocalStorageModule.withConfig({
 			prefix: 'my-app',

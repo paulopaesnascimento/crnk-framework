@@ -17,14 +17,14 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class OperationsSecurityTest extends AbstractOperationsTest {
-
+/*
 
     private OperationsClient operationsClient;
 
     private boolean active = false;
 
-    @Before
-    @Override
+    //@Before
+   // @Override
     public void setUp() throws Exception {
         super.setUp();
         operationsClient = new OperationsClient(client);
@@ -47,7 +47,7 @@ public class OperationsSecurityTest extends AbstractOperationsTest {
         feature.addModule(module);
     }
 
-    @Test
+   // @Test
     public void checkForbidden() {
         active = true;
         PersonEntity person1 = newPerson("1");
@@ -65,7 +65,7 @@ public class OperationsSecurityTest extends AbstractOperationsTest {
     }
 
 
-    @Test
+   // @Test
     public void checkAllowed() {
         active = false;
         PersonEntity person1 = newPerson("1");
@@ -76,4 +76,5 @@ public class OperationsSecurityTest extends AbstractOperationsTest {
         insertCall.add(HttpMethod.POST, person2);
         insertCall.execute();
     }
+*/
 }

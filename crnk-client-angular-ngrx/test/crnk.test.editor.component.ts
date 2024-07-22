@@ -1,9 +1,9 @@
-import {Component, OnDestroy, OnInit, ViewChild} from "@angular/core";
-import {FormBinding} from "../binding/crnk.binding.form";
-import {QMetaAttribute} from "../meta/meta.attribute";
-import {Subscription} from "rxjs/Subscription";
-import {CrnkBindingService} from "../binding/crnk.binding.service";
-import {BeanBinding} from "../expression/crnk.expression";
+import { Component, OnDestroy, OnInit, ViewChild } from "@angular/core";
+import { FormBinding } from "../binding/crnk.binding.form";
+import { QMetaAttribute } from "../meta/meta.attribute";
+import { Subscription } from "rxjs/Subscription";
+import { CrnkBindingService } from "../binding/crnk.binding.service";
+import { BeanBinding } from "../expression/crnk.expression";
 
 @Component({
 	selector: 'test-editor',

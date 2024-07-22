@@ -3,8 +3,8 @@ package io.crnk.operations;
 import io.crnk.operations.model.MovieEntity;
 import io.crnk.spring.internal.SpringServiceDiscovery;
 import io.crnk.spring.jpa.SpringTransactionRunner;
-import org.h2.jdbcx.JdbcDataSource;
-import org.hibernate.dialect.H2Dialect;
+//import org.h2.jdbcx.JdbcDataSource;
+//import org.hibernate.dialect.H2Dialect;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -19,11 +19,11 @@ import jakarta.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
 import java.util.Properties;
 
-@Configuration
-@EnableTransactionManagement
-@ComponentScan({"io.kartharsis"})
+//@Configuration
+//@EnableTransactionManagement
+//@ComponentScan({"io.kartharsis"})
 public class OperationsTestConfig {
-
+/*	
 	@Bean
 	public EntityManager entityManager(EntityManagerFactory entityManagerFactory) {
 		return entityManagerFactory.createEntityManager();
@@ -56,10 +56,10 @@ public class OperationsTestConfig {
 
 	@Bean
 	public DataSource testDataSource() {
-		JdbcDataSource dataSource = new JdbcDataSource();
-		dataSource.setUrl("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE");
-		dataSource.setUser("sa");
-		return dataSource;
+		//JdbcDataSource dataSource = new JdbcDataSource();
+		//dataSource.setUrl("jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=TRUE");
+		//dataSource.setUser("sa");
+		//return dataSource;
 	}
 
 	@Bean
@@ -77,9 +77,10 @@ public class OperationsTestConfig {
 
 	private Properties hibernateProperties() {
 		Properties props = new Properties();
-		props.setProperty("hibernate.dialect", H2Dialect.class.getName());
+		props.setProperty("hibernate.dialect", "org.hibernate.dialect.H2Dialect");
 		props.setProperty("hibernate.hbm2ddl.auto", "create");
 		props.setProperty("hibernate.globally_quoted_identifiers", "true");
 		return props;
 	}
+*/	
 }

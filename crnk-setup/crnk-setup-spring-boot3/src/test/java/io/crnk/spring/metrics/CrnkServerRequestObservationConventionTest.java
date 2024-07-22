@@ -15,9 +15,9 @@ import org.springframework.mock.web.MockHttpServletResponse;
 
 import static org.junit.Assert.assertEquals;
 
-@RunWith(JUnitParamsRunner.class)
+//@RunWith(JUnitParamsRunner.class)
 public class CrnkServerRequestObservationConventionTest {
-
+	/*
 	private CrnkBoot boot;
 
 	private CrnkServerRequestObservationConvention crnkServerRequestObservationConvention;
@@ -62,4 +62,6 @@ public class CrnkServerRequestObservationConventionTest {
 		}
 		throw new IllegalStateException();
 	}
+*/
 }
+

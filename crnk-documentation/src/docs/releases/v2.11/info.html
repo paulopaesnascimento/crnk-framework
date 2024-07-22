@@ -31,19 +31,19 @@ The JPA module will detect those repositories and make them work like in the pas
 configuration. The new setup has a number of advantages:
 
 <ul>
-    <li>
-        It is a regular repository like any other. In case of Spring Boot you can, for example,
-        inject it anywhere you like as it is a managed bean.
-    </li>
-    <li>
-        It makes use of the forwarding repository behaviors (see @JsonApiRelation) to
-        forward relationship calls to either side. So in case of customizations, only the
-        resource repositories have to be customized, the relationships will follow automatically.
-    </li>
-    <li>
-        Having a repository at hand allows to do any kind of customizations without having
-        to rely on decorators.
-    </li>
+	<li>
+		It is a regular repository like any other. In case of Spring Boot you can, for example,
+		inject it anywhere you like as it is a managed bean.
+	</li>
+	<li>
+		It makes use of the forwarding repository behaviors (see @JsonApiRelation) to
+		forward relationship calls to either side. So in case of customizations, only the
+		resource repositories have to be customized, the relationships will follow automatically.
+	</li>
+	<li>
+		Having a repository at hand allows to do any kind of customizations without having
+		to rely on decorators.
+	</li>
 </ul>
 
 The old configuration mechanism is still in place and can continued to be used.

@@ -72,8 +72,8 @@ export let createEmptyMetaElement = function(id: string): MetaElement {
 		attributes: {
 		},
 		relationships: {
-			parent: {data: null},
-			children: {data: []},
+			parent: { data: null },
+			children: { data: [] },
 		},
 	};
 };

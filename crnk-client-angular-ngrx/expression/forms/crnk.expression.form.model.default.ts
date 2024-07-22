@@ -1,4 +1,4 @@
-import {Directive, EventEmitter, forwardRef, Inject, Input, OnChanges, OnDestroy, Optional, Output, Self} from '@angular/core';
+import { Directive, EventEmitter, forwardRef, Inject, Input, OnChanges, OnDestroy, Optional, Output, Self } from '@angular/core';
 import {
 	AsyncValidatorFn,
 	ControlValueAccessor,
@@ -9,9 +9,9 @@ import {
 	Validator,
 	ValidatorFn
 } from '@angular/forms';
-import {selectValueAccessor, setUpControl} from './crnk.expression.form.utils';
-import {ExpressionAccessor, Path} from '../crnk.expression';
-import {CrnkControl} from './crnk.expression.form.model.base';
+import { selectValueAccessor, setUpControl } from './crnk.expression.form.utils';
+import { ExpressionAccessor, Path } from '../crnk.expression';
+import { CrnkControl } from './crnk.expression.form.model.base';
 
 
 const expressionControlBinding: any = {
@@ -76,7 +76,7 @@ export class ExpressionDirective extends CrnkControl implements OnChanges, OnDes
 
 	private _setUpStandalone(): void {
 		setUpControl(this._control, this);
-		this._control.updateValueAndValidity({emitEvent: false});
+		this._control.updateValueAndValidity({ emitEvent: false });
 	}
 
 	viewToModelUpdate(newValue: any): void {

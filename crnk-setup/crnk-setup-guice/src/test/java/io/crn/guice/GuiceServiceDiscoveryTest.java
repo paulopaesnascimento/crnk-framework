@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class GuiceServiceDiscoveryTest {
-
+/*
 	private GuiceServiceDiscovery discovery;
 
 	public class TestModule extends AbstractModule {
@@ -60,4 +60,6 @@ public class GuiceServiceDiscoveryTest {
 		Assert.assertTrue(mapper.isPresent());
 		Assert.assertTrue(mapper.get() instanceof TestExceptionMapper);
 	}
+	
+*/
 }

@@ -1,10 +1,10 @@
-import {Response, ResponseOptions} from '@angular/http';
+import { Response, ResponseOptions } from '@angular/http';
 
-import {Observable} from 'rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/throw';
 
-import {NgrxJsonApi} from 'ngrx-json-api/src/api';
+import { NgrxJsonApi } from 'ngrx-json-api/src/api';
 
 export class JsonApiMock {
 
@@ -61,6 +61,6 @@ export class JsonApiMock {
 }
 
 export const MOCK_JSON_API_PROVIDERS = [
-	{provide: JsonApiMock, useClass: JsonApiMock},
-	{provide: NgrxJsonApi, useExisting: JsonApiMock}
+	{ provide: JsonApiMock, useClass: JsonApiMock },
+	{ provide: NgrxJsonApi, useExisting: JsonApiMock }
 ];

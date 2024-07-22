@@ -3,7 +3,7 @@ import {
 	OneResult,
 	Resource
 } from './crnk';
-import {TaskStatus} from './task.status';
+import { TaskStatus } from './task.status';
 
 export interface PrimitiveAttribute extends Resource {
 	stringValue?: string;

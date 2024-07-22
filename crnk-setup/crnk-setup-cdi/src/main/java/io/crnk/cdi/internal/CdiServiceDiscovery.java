@@ -26,6 +26,7 @@ import java.util.Set;
  */
 public class CdiServiceDiscovery implements ServiceDiscovery {
 
+	
 	private static final Logger LOGGER = LoggerFactory.getLogger(CdiServiceDiscovery.class);
 
 
@@ -97,5 +98,5 @@ public class CdiServiceDiscovery implements ServiceDiscovery {
 		}
 		return list;
 	}
-
+	
 }

@@ -7,7 +7,7 @@ require('rxjs/add/operator/debounceTime');
 require('rxjs/add/operator/distinct');
 require('rxjs/add/operator/switch');
 var jsonapi_1 = require('../../ngrx/jsonapi');
-var DataTableBinding = (function () {
+var DataTableBinding = (function() {
 	function DataTableBinding(ngrxJsonApiService, config, utils) {
 		var _this = this;
 		this.ngrxJsonApiService = ngrxJsonApiService;
@@ -20,20 +20,20 @@ var DataTableBinding = (function () {
 		this.num = 0;
 		this.resultsSubject
 			.switch()
-			.filter(function (it) {
+			.filter(function(it) {
 				return it != null;
 			})
-			.subscribe(function (resources) {
+			.subscribe(function(resources) {
 				_this.resources = resources;
 				// TODO get meta information
 				_this.totalRecords = resources.length;
 			});
 	}
 
-	DataTableBinding.prototype.unsubscribe = function () {
+	DataTableBinding.prototype.unsubscribe = function() {
 		this.resultsSubject.unsubscribe();
 	};
-	DataTableBinding.prototype.onLazyLoad = function (event) {
+	DataTableBinding.prototype.onLazyLoad = function(event) {
 		var offset = event.first;
 		var limit = event.rows;
 		var filters = [];
@@ -43,12 +43,12 @@ var DataTableBinding = (function () {
 			for (var _i = 0, _a = event.multiSortMeta; _i < _a.length; _i++) {
 				var sortMeta = _a[_i];
 				var direction = sortMeta.order == -1 ? jsonapi_1.Direction.DESC : jsonapi_1.Direction.ASC;
-				sorting.push({direction: direction, api: this.utils.toQueryPath(sortMeta.field)});
+				sorting.push({ direction: direction, api: this.utils.toQueryPath(sortMeta.field) });
 			}
 		}
 		else if (event.sortField) {
 			var direction = event.sortOrder == -1 ? jsonapi_1.Direction.DESC : jsonapi_1.Direction.ASC;
-			sorting.push({direction: direction, api: this.utils.toQueryPath(event.sortField)});
+			sorting.push({ direction: direction, api: this.utils.toQueryPath(event.sortField) });
 		}
 		if (event.filters) {
 			for (var filterKey in event.filters) {
@@ -62,7 +62,7 @@ var DataTableBinding = (function () {
 					value = '%' + value + '%';
 				}
 				var attributePath = this.utils.toQueryPath(filterKey);
-				filters.push({value: value, path: attributePath, operator: matchMode});
+				filters.push({ value: value, path: attributePath, operator: matchMode });
 			}
 		}
 		var query = _.cloneDeep(this.config.query);

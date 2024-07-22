@@ -29,7 +29,7 @@ module.exports = function(config) {
 			bundlerOptions: {
 				entrypoints: /\.spec\.ts$/,
 				transforms: [
-					require("karma-typescript-es6-transform")({presets: ["es2015"]}),
+					require("karma-typescript-es6-transform")({ presets: ["es2015"] }),
 					require("karma-typescript-angular2-transform")
 
 				]

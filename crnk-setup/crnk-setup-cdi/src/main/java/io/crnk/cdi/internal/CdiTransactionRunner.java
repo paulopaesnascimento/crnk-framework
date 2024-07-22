@@ -12,7 +12,7 @@ import java.util.concurrent.Callable;
  */
 @ApplicationScoped
 public class CdiTransactionRunner implements TransactionRunner {
-
+	
 	private CdiTransactionRunnerImpl impl;
 
 	public CdiTransactionRunner() {
@@ -38,4 +38,5 @@ public class CdiTransactionRunner implements TransactionRunner {
 			throw e;
 		}
 	}
+	
 }

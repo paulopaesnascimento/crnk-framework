@@ -1,5 +1,5 @@
-import {Directive, ElementRef, forwardRef, Renderer2} from "@angular/core";
-import {DefaultValueAccessor, NG_VALUE_ACCESSOR} from "@angular/forms";
+import { Directive, ElementRef, forwardRef, Renderer2 } from "@angular/core";
+import { DefaultValueAccessor, NG_VALUE_ACCESSOR } from "@angular/forms";
 
 
 export const DEFAULT_VALUE_ACCESSOR: any = {
@@ -10,7 +10,7 @@ export const DEFAULT_VALUE_ACCESSOR: any = {
 
 @Directive({
 	selector: '[crnkFormExpression],[crnkExpression]',
-	host: {'(input)': 'onChange($event.target.value)', '(blur)': 'onTouched()'},
+	host: { '(input)': 'onChange($event.target.value)', '(blur)': 'onTouched()' },
 	providers: [DEFAULT_VALUE_ACCESSOR]
 })
 export class ExpressionDefaultValueAccessorDirective extends DefaultValueAccessor {

@@ -49,7 +49,8 @@ Main benefits over the traditional API are:
 	</li>
 </ul>
 
-Currently this is considered experimental. For more information and limitations have a look at the documentation. In particular the lack
+Currently this is considered experimental. For more information and limitations have a look at the documentation. In
+particular the lack
 of an asynchronous JDBC/JPA implementation is a bit of a roadblock for some application.
 
 
@@ -81,7 +82,8 @@ vertx.deployVerticle(vehicle, completionHandler);
 
 <h4>Updates to www.crnk.io</h4>
 
-The web page has been been refreshed a bit. Most notably the update of the web page has been integrated into the release process and
+The web page has been been refreshed a bit. Most notably the update of the web page has been integrated into the release
+process and
 documentation gets published automatically:
 
 <ul>
@@ -103,27 +105,32 @@ documentation gets published automatically:
 
 <h4>Dedicated security chapter</h4>
 
-The documentation hosts a new chapter dedicated to security. It aggregates the various security-related topics in one chapter.
+The documentation hosts a new chapter dedicated to security. It aggregates the various security-related topics in one
+chapter.
 
 
 <h4>@JsonProperty support for QuerySpec</h4>
 
-The @JsonProperty annotation allows to rename fields in the JSON response. Since this release the same name mapping is applied
+The @JsonProperty annotation allows to rename fields in the JSON response. Since this release the same name mapping is
+applied
 to filter, sort, field set and inclusion parameters in QuerySpec.
 DefaultQuerySpecUrlMapper.setMapJsonNames allows to disable the behavior.
 
 
 <h4>Refinements to custom PagingBehavior registration</h4>
 
-Registering a custom PagingBehavior implementation makes it the global default in an application. It is no longer necessary to explicitly
-refer to the new implementation in @JsonApiResource.pagingBehavior. @JsonApiResource.pagingBehavior can continue to be used
+Registering a custom PagingBehavior implementation makes it the global default in an application. It is no longer
+necessary to explicitly
+refer to the new implementation in @JsonApiResource.pagingBehavior. @JsonApiResource.pagingBehavior can continue to be
+used
 if multiple PagingBehavior implementations are used for different resources.
 
 <h4>URL Mapping of QuerySpec</h4>
 
 The functionality of QuerySpecSerializer and QuerySpecDeserializer has been merged into a
 <span class="highlight">new interface QuerySpecUrlMapper</span>.
-The functionality of the two have been closely related and changes usually needed to be applied to both. The new interface simplifies more consistent
+The functionality of the two have been closely related and changes usually needed to be applied to both. The new
+interface simplifies more consistent
 URL handling and eases customizing that behavior.
 
 <h4>Improved exception handling</h4>
@@ -247,4 +254,5 @@ Setup related projects newly share a crnk-setup prefix:
 <h4>Move to Bintray</h4>
 
 OSS hosting on Sonatype has proven to be rather unreliable. The project has now moved to JFrog Bintray.
-The repository is available at: <a href="https://bintray.com/crnk-project/maven">https://bintray.com/crnk-project/maven</a>.
+The repository is available at: <a
+	href="https://bintray.com/crnk-project/maven">https://bintray.com/crnk-project/maven</a>.

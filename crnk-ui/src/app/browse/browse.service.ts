@@ -1,9 +1,9 @@
 import * as _ from 'lodash';
-import {Inject, Injectable} from '@angular/core';
-import {Http} from '@angular/http';
-import {LocalStorageService} from 'angular-2-local-storage';
+import { Inject, Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import { LocalStorageService } from 'angular-2-local-storage';
 
-import {DOCUMENT} from '@angular/platform-browser';
+import { DOCUMENT } from '@angular/platform-browser';
 
 @Injectable()
 export class BrowseUtils {
@@ -81,15 +81,15 @@ export class BrowsePreferencesService {
 
 		const href = this.document.location.href;
 		const suffix = "browse/#/";
-		if(href.endsWith(suffix)){
+		if (href.endsWith(suffix)) {
 			loaded.baseUrl = href.substring(0, href.length - suffix.length);
 
-			if(loaded.baseUrl && !loaded.baseUrl.endsWith("/")){
+			if (loaded.baseUrl && !loaded.baseUrl.endsWith("/")) {
 				loaded.baseUrl = loaded.baseUrl + "/";
 			}
 		}
 
-		if(!loaded.documentDisplayType){
+		if (!loaded.documentDisplayType) {
 			loaded.documentDisplayType = 'tree';
 		}
 

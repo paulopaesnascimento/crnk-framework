@@ -5,11 +5,11 @@ import {
 	OneResult,
 	Resource
 } from './crnk';
-import {DefaultPagedMetaInformation} from './default.paged.meta.information';
-import {DefaultPagedLinksInformation} from './information/default.paged.links.information';
-import {Projects} from './projects';
-import {ScheduleStatus} from './schedule.status';
-import {Tasks} from './tasks';
+import { DefaultPagedMetaInformation } from './default.paged.meta.information';
+import { DefaultPagedLinksInformation } from './information/default.paged.links.information';
+import { Projects } from './projects';
+import { ScheduleStatus } from './schedule.status';
+import { Tasks } from './tasks';
 
 export interface Schedule extends Resource {
 	name?: string;

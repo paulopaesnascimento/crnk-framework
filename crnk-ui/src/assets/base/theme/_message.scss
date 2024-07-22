@@ -1,4 +1,5 @@
 body {
+
 	/* Messages */
 	.ui-messages {
 		padding: $headerPadding;
@@ -74,7 +75,7 @@ body {
 	.ui-growl {
 		top: 90px;
 
-		> .ui-growl-item-container {
+		>.ui-growl-item-container {
 			opacity: 1;
 
 			&.ui-growl-message-info {

@@ -1,11 +1,11 @@
-import {Resource} from "ngrx-json-api";
-import {JsonApiMock} from "./crnk.operations.spec.mock";
-import {NgrxJsonApi} from "ngrx-json-api/src/api";
+import { Resource } from "ngrx-json-api";
+import { JsonApiMock } from "./crnk.operations.spec.mock";
+import { NgrxJsonApi } from "ngrx-json-api/src/api";
 
 
 export const MOCK_JSON_API_PROVIDERS = [
-	{provide: JsonApiMock, useClass: JsonApiMock},
-	{provide: NgrxJsonApi, useExisting: JsonApiMock}
+	{ provide: JsonApiMock, useClass: JsonApiMock },
+	{ provide: NgrxJsonApi, useExisting: JsonApiMock }
 ];
 
 
@@ -52,11 +52,11 @@ export const testResource: Resource = {
 	},
 	relationships: {
 		author: {
-			data: {type: 'Person', id: '1'}
+			data: { type: 'Person', id: '1' }
 		},
 		comments: {
 			data: [
-				{type: 'Comment', id: '1'},
+				{ type: 'Comment', id: '1' },
 			]
 		}
 	}
@@ -78,11 +78,11 @@ export const testPayload = {
 			},
 			relationships: {
 				author: {
-					data: {type: 'Person', id: '1'}
+					data: { type: 'Person', id: '1' }
 				},
 				comments: {
 					data: [
-						{type: 'Comment', id: '1'},
+						{ type: 'Comment', id: '1' },
 					]
 				}
 			}
@@ -95,7 +95,7 @@ export const testPayload = {
 			},
 			relationships: {
 				author: {
-					data: {type: 'Person', id: '22'}
+					data: { type: 'Person', id: '22' }
 				},
 				comments: {
 					data: []
@@ -111,12 +111,12 @@ export const testPayload = {
 			relationships: {
 				'blogs': {
 					data: [
-						{type: 'Blog', id: '1'},
-						{type: 'Blog', id: '3'}
+						{ type: 'Blog', id: '1' },
+						{ type: 'Blog', id: '3' }
 					]
 				},
 				profile: {
-					data: {type: 'Profile', id: '1'}
+					data: { type: 'Profile', id: '1' }
 				}
 			}
 		},
@@ -149,7 +149,7 @@ export const testPayload = {
 			},
 			relationships: {
 				author: {
-					data: {type: 'Person', id: '2'}
+					data: { type: 'Person', id: '2' }
 				}
 			}
 		},
@@ -162,7 +162,7 @@ export const testPayload = {
 			id: '3',
 			relationships: {
 				author: {
-					data: {type: 'Person', id: '1'}
+					data: { type: 'Person', id: '1' }
 				}
 			}
 		},

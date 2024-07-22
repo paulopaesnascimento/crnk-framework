@@ -1,7 +1,7 @@
-import {OperationType, Resource, ResourceError, ResourceState, ManyResourceRelationship, OneResourceRelationship, ResourceIdentifier, StoreResource} from 'ngrx-json-api';
+import { OperationType, Resource, ResourceError, ResourceState, ManyResourceRelationship, OneResourceRelationship, ResourceIdentifier, StoreResource } from 'ngrx-json-api';
 import * as _ from 'lodash';
 
-export const toQueryPath = function (attributePath: string | Expression<any>): string {
+export const toQueryPath = function(attributePath: string | Expression<any>): string {
 	const strAttributePath = attributePath.toString();
 
 	const pathElements = strAttributePath.split('.');
@@ -694,7 +694,7 @@ export interface TypedManyResourceRelationship<T extends StoreResource> extends 
 	reference?: Array<T>;
 }
 
-export interface TypedOneResourceRelationship<T extends StoreResource>  extends OneResourceRelationship {
+export interface TypedOneResourceRelationship<T extends StoreResource> extends OneResourceRelationship {
 	reference?: T;
 }
 
@@ -705,7 +705,7 @@ export class QResourceIdentifier extends BeanPath<ResourceIdentifier> {
 }
 
 
-export class QTypedOneResourceRelationship<Q extends BeanPath<T>, T extends StoreResource>  extends BeanPath<TypedOneResourceRelationship<T>> {
+export class QTypedOneResourceRelationship<Q extends BeanPath<T>, T extends StoreResource> extends BeanPath<TypedOneResourceRelationship<T>> {
 	data: QResourceIdentifier = new QResourceIdentifier(this, 'data');
 
 	private _reference: Q;
@@ -723,7 +723,7 @@ export class QTypedOneResourceRelationship<Q extends BeanPath<T>, T extends Stor
 	}
 }
 
-export class QTypedManyResourceRelationship<Q extends BeanPath<T>, T extends StoreResource>  extends BeanPath<TypedManyResourceRelationship<T>> {
+export class QTypedManyResourceRelationship<Q extends BeanPath<T>, T extends StoreResource> extends BeanPath<TypedManyResourceRelationship<T>> {
 	data: QResourceIdentifier = new QResourceIdentifier(this, 'data');
 
 	private _reference: Q;

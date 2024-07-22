@@ -2,9 +2,9 @@ import {
 	BeanPath,
 	StringPath
 } from '../expression/';
-import {MetaCollectionType} from './meta.collection.type';
-import {QMetaElement} from './meta.element';
-import {QMetaType} from './meta.type';
+import { MetaCollectionType } from './meta.collection.type';
+import { QMetaElement } from './meta.element';
+import { QMetaType } from './meta.type';
 import {
 	ManyQueryResult,
 	OneQueryResult

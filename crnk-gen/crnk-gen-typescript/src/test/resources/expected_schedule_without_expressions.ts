@@ -1,9 +1,9 @@
-import {DefaultPagedMetaInformation} from './default.paged.meta.information';
-import {DefaultPagedLinksInformation} from './information/default.paged.links.information';
-import {Projects} from './projects';
-import {ScheduleStatus} from './schedule.status';
-import {Tasks} from './tasks';
-import {CrnkStoreResource} from '@crnk/angular-ngrx';
+import { DefaultPagedMetaInformation } from './default.paged.meta.information';
+import { DefaultPagedLinksInformation } from './information/default.paged.links.information';
+import { Projects } from './projects';
+import { ScheduleStatus } from './schedule.status';
+import { Tasks } from './tasks';
+import { CrnkStoreResource } from '@crnk/angular-ngrx';
 import {
 	ManyQueryResult,
 	OneQueryResult,
@@ -52,10 +52,10 @@ export let createEmptySchedule = function(id: string): Schedule {
 		attributes: {
 		},
 		relationships: {
-			taskSet: {data: []},
-			project: {data: null},
-			projects: {data: []},
-			status: {data: null},
+			taskSet: { data: [] },
+			project: { data: null },
+			projects: { data: [] },
+			status: { data: null },
 		},
 	};
 };

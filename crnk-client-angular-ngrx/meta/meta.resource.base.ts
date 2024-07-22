@@ -2,8 +2,8 @@ import {
 	BeanPath,
 	StringPath
 } from '../expression/';
-import {QMetaDataObject} from './meta.data.object';
-import {MetaJsonObject} from './meta.json.object';
+import { QMetaDataObject } from './meta.data.object';
+import { MetaJsonObject } from './meta.json.object';
 import {
 	ManyQueryResult,
 	OneQueryResult

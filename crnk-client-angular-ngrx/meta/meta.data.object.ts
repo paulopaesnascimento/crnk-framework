@@ -172,16 +172,16 @@ export let createEmptyMetaDataObject = function(id: string): MetaDataObject {
 		attributes: {
 		},
 		relationships: {
-			subTypes: {data: []},
-			superType: {data: null},
-			attributes: {data: []},
-			declaredAttributes: {data: []},
-			primaryKey: {data: null},
-			declaredKeys: {data: []},
-			interfaces: {data: []},
-			elementType: {data: null},
-			parent: {data: null},
-			children: {data: []},
+			subTypes: { data: [] },
+			superType: { data: null },
+			attributes: { data: [] },
+			declaredAttributes: { data: [] },
+			primaryKey: { data: null },
+			declaredKeys: { data: [] },
+			interfaces: { data: [] },
+			elementType: { data: null },
+			parent: { data: null },
+			children: { data: [] },
 		},
 	};
 };

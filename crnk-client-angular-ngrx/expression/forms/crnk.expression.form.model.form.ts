@@ -1,4 +1,4 @@
-import {Directive, EventEmitter, forwardRef, Inject, Input, OnChanges, OnDestroy, Optional, Output, Self} from '@angular/core';
+import { Directive, EventEmitter, forwardRef, Inject, Input, OnChanges, OnDestroy, Optional, Output, Self } from '@angular/core';
 import {
 	AbstractFormGroupDirective,
 	AsyncValidatorFn,
@@ -13,9 +13,9 @@ import {
 	Validator,
 	ValidatorFn
 } from '@angular/forms';
-import {controlPath, selectValueAccessor, TemplateDrivenErrors} from './crnk.expression.form.utils';
-import {ExpressionAccessor, Path} from '../crnk.expression';
-import {CrnkControl} from './crnk.expression.form.model.base';
+import { controlPath, selectValueAccessor, TemplateDrivenErrors } from './crnk.expression.form.utils';
+import { ExpressionAccessor, Path } from '../crnk.expression';
+import { CrnkControl } from './crnk.expression.form.model.base';
 
 const formExpressionBinding: any = {
 	provide: NgControl,
@@ -88,12 +88,12 @@ export class FormExpressionDirective extends CrnkControl implements OnChanges, O
 	}
 
 	get path(): string[] {
-		if(!this._pathModel){
+		if (!this._pathModel) {
 			return [];
 		}
-		if(this._parent){
+		if (this._parent) {
 			return controlPath(this._pathModel.toFormName(), this._parent);
-		}else{
+		} else {
 			return [this._pathModel.toFormName()];
 		}
 	}

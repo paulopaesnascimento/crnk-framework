@@ -7,7 +7,7 @@ import {
 	MetaDataObject,
 	QMetaDataObject
 } from './meta.data.object';
-import {MetaResourceBase} from './meta.resource.base';
+import { MetaResourceBase } from './meta.resource.base';
 import {
 	ManyQueryResult,
 	OneQueryResult

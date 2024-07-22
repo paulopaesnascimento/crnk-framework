@@ -10,8 +10,9 @@ import io.crnk.test.mock.models.Schedule;
 import io.crnk.test.mock.reactive.ReactiveTestModule;
 import io.crnk.test.suite.TestContainer;
 
-public class ReactiveServletTestContainer implements TestContainer {
-
+//public class ReactiveServletTestContainer implements TestContainer {
+public class ReactiveServletTestContainer {
+/*
 	private final ReactiveTestModule testModule;
 
 	private final CrnkBoot boot;
@@ -64,4 +65,5 @@ public class ReactiveServletTestContainer implements TestContainer {
 	public CrnkBoot getBoot() {
 		return boot;
 	}
+*/
 }

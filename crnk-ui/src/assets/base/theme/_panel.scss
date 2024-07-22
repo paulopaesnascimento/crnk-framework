@@ -78,7 +78,7 @@ body {
 			font-size: $headerFontSize;
 			@include transition(background-color .3s);
 
-			> a {
+			>a {
 				padding: $headerPadding;
 				padding-left: 2.5em;
 				color: #ffffff;
@@ -93,7 +93,7 @@ body {
 				color: $accentTextColor;
 				@include border-radius-bottom(0);
 
-				> a {
+				>a {
 					color: $accentTextColor;
 				}
 			}
@@ -129,11 +129,11 @@ body {
 			border: 0 none;
 			@include border-radius(0);
 
-			> li {
+			>li {
 				padding: 0;
 				@include transition(border-color .3s);
 
-				> a {
+				>a {
 					padding: $headerPadding;
 
 					&:focus {
@@ -141,13 +141,14 @@ body {
 					}
 				}
 
-				> .fa-close {
+				>.fa-close {
 					margin: .325em 0 0 0;
 					@include transition(color .3s);
 					color: $textSecondaryColor;
 				}
 
-				.ui-tabview-left-icon, .ui-tabview-right-icon {
+				.ui-tabview-left-icon,
+				.ui-tabview-right-icon {
 					color: $textSecondaryColor;
 					display: inline-block;
 					vertical-align: middle;
@@ -177,7 +178,7 @@ body {
 						color: $primaryColor;
 					}
 
-					> .fa-close {
+					>.fa-close {
 						color: $accentColor;
 					}
 				}
@@ -194,13 +195,13 @@ body {
 		}
 
 		&.ui-tabview-top {
-			> .ui-tabview-nav {
+			>.ui-tabview-nav {
 				padding: 0;
 				margin: 0;
 				@include border-radius-top(4px);
 				border-bottom: 1px solid $dividerColor;
 
-				> li {
+				>li {
 					border-style: solid;
 					border-width: 0 0 2px 0;
 				}
@@ -208,30 +209,30 @@ body {
 		}
 
 		&.ui-tabview-bottom {
-			> .ui-tabview-nav {
+			>.ui-tabview-nav {
 				padding: 0;
 				margin: 0;
 				@include border-radius-bottom(4px);
 				border-top: 1px solid $dividerColor;
 
-				> li {
+				>li {
 					border-width: 2px 0 0 0;
 				}
 			}
 		}
 
 		&.ui-tabview-left {
-			> .ui-tabview-nav {
+			>.ui-tabview-nav {
 				padding: 0;
 				margin: 0;
 				@include border-radius-left($borderRadius + 1);
 				border-right: 1px solid $dividerColor;
 
-				> li {
+				>li {
 					box-sizing: border-box;
 					border-width: 0 2px 0 0;
 
-					> a {
+					>a {
 						width: 100%;
 						box-sizing: border-box;
 					}
@@ -240,22 +241,22 @@ body {
 		}
 
 		&.ui-tabview-right {
-			> .ui-tabview-nav {
+			>.ui-tabview-nav {
 				padding: 0;
 				@include border-radius-right($borderRadius + 1);
 				border-left: 1px solid $dividerColor;
 
-				> li {
+				>li {
 					box-sizing: border-box;
 					border-width: 0 0 0 2px;
 
-					> a {
+					>a {
 						width: 100%;
 						box-sizing: border-box;
 					}
 
 					&.ui-state-active {
-						> a {
+						>a {
 							padding-left: 0.875em;
 						}
 					}

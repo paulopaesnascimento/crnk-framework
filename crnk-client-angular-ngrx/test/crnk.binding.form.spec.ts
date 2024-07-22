@@ -1,14 +1,14 @@
-import {async, ComponentFixture, fakeAsync, getTestBed, TestBed, tick} from '@angular/core/testing';
+import { async, ComponentFixture, fakeAsync, getTestBed, TestBed, tick } from '@angular/core/testing';
 
 import "rxjs/add/operator/merge";
-import {Store} from '@ngrx/store';
+import { Store } from '@ngrx/store';
 import {
 	LocalQueryInitAction, ModifyStoreResourceErrorsAction, NewStoreResourceAction,
 	NgrxJsonApiService
 } from "ngrx-json-api";
-import {By} from "@angular/platform-browser";
-import {TestEditorComponent} from "./crnk.test.editor.component";
-import {TestingModule} from "./crnk.test.module";
+import { By } from "@angular/platform-browser";
+import { TestEditorComponent } from "./crnk.test.editor.component";
+import { TestingModule } from "./crnk.test.module";
 
 
 describe('FormBinding', () => {

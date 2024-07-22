@@ -8,9 +8,13 @@ plugins {
 dependencies {
 	implementation project(':crnk-core')
 	implementation project(':crnk-meta')
-	compileOnly project(':crnk-client')
-	compileOnly project(':crnk-setup:crnk-setup-rs')
-	compileOnly 'jakarta.ws.rs:jakarta.ws.rs-api:3.1.0'
+	implementation project(':crnk-client')
+	implementation project(':crnk-setup:crnk-setup-rs')
+	implementation project(':crnk-setup:crnk-setup-spring')
+	//implementation 'jakarta.ws.rs:jakarta.ws.rs-api:3.1.0'
+	//implementation  group: 'org.hibernate', name: 'hibernate-core-jakarta', version: '5.6.15.Final'
+	//implementation group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '3.1.0'
+	//implementation 'jakarta.xml:jakarta.xml.bind-api:3.0.1'
 
 	testImplementation  project(':crnk-client')
 	testImplementation  project(':crnk-setup:crnk-setup-rs')
@@ -27,8 +31,11 @@ dependencies {
 	testImplementation  group: 'org.springframework', name: 'spring-orm', version: '6.0.12'
 	testImplementation  group: 'org.springframework', name: 'spring-context', version: '6.0.12'
 	testImplementation  group: 'org.springframework', name: 'spring-test', version: '6.0.12'
-	testImplementation  group: 'com.h2database', name: 'h2', version: '1.4.187'
+	//testImplementation group: 'jakarta.persistence', name: 'jakarta.persistence-api', version: '3.1.0'
+	
+	//testImplementation  group: 'com.h2database', name: 'h2', version: '2.2.224'
 	testImplementation  group: 'org.hibernate', name: 'hibernate-core-jakarta', version: '5.6.15.Final'
+	//testImplementation  group: 'jakarta.xml', name: 'jakarta.xml.bind-api', version: '3.0.1'
 }
 
 bootJar {
@@ -36,5 +43,5 @@ bootJar {
 }
 
 jar {
-	enabled = true
+	enabled = false
 }

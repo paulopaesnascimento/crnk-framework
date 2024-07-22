@@ -72,9 +72,9 @@ export let createEmptyMetaType = function(id: string): MetaType {
 		id: id,
 		type: 'meta/type',
 		relationships: {
-			elementType: {data: null},
-			parent: {data: null},
-			children: {data: []},
+			elementType: { data: null },
+			parent: { data: null },
+			children: { data: [] },
 		},
 	};
 };

@@ -76,7 +76,8 @@ body {
 	.ui-menu {
 		padding: .5em 0;
 
-		.ui-shadow, &.ui-shadow {
+		.ui-shadow,
+		&.ui-shadow {
 			@include overlay-input-shadow();
 		}
 
@@ -182,8 +183,8 @@ body {
 			padding: 0;
 
 			.ui-menubar-root-list {
-				> .ui-menuitem {
-					> .ui-menuitem-link {
+				>.ui-menuitem {
+					>.ui-menuitem-link {
 						.ui-menuitem-icon {
 							margin-right: 0;
 						}
@@ -226,7 +227,7 @@ body {
 			border: 0 none;
 			@include border-radius(0);
 
-			> .ui-tabmenuitem {
+			>.ui-tabmenuitem {
 				top: auto;
 				margin: 0 .25em 0 0;
 				padding: 0;
@@ -234,14 +235,15 @@ body {
 				border-width: 0 0 2px 0;
 				@include transition(border-color .3s);
 
-				> a {
+				>a {
 					padding: $headerPadding;
 
 					&:focus {
 						outline: 0 none;
 					}
 
-					.ui-menuitem-icon, .ui-menuitem-text {
+					.ui-menuitem-icon,
+					.ui-menuitem-text {
 						float: none;
 						display: inline-block;
 						vertical-align: middle;
@@ -302,7 +304,9 @@ body {
 			&.ui-state-active {
 				background-color: $accentColor;
 				@include border-radius-bottom(0);
-				a, .fa {
+
+				a,
+				.fa {
 					color: $accentTextColor;
 				}
 			}
@@ -316,7 +320,8 @@ body {
 
 				.ui-menuitem-link {
 					border: 0 none;
-					padding: .625em 1em;;
+					padding: .625em 1em;
+					;
 					width: 100%;
 					min-height: 2.750em;
 					box-sizing: border-box;

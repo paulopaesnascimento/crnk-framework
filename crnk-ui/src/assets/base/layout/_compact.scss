@@ -11,7 +11,9 @@ body {
 		}
 
 		.ui-datepicker {
-			tbody td a, body .ui-datepicker tbody td span {
+
+			tbody td a,
+			body .ui-datepicker tbody td span {
 				padding-top: .25em;
 			}
 		}
@@ -25,8 +27,8 @@ body {
 			&.menu-layout-horizontal {
 				.layout-menu {
 					ul.ultima-menu {
-						> li {
-							> ul {
+						>li {
+							>ul {
 								top: 35px;
 
 								li {

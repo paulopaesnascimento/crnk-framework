@@ -10,23 +10,20 @@
 		<div class="ui-g">
 			<div class="ui-g-12 ui-md-2">
 				<p-dropdown [options]="availableTypes" [(ngModel)]="preferences.query.type" placeholder="Type"
-							(ngModelChange)="updateAvailableRelationships()"
-							[style]="{'width':'100%'}"></p-dropdown>
+					(ngModelChange)="updateAvailableRelationships()" [style]="{'width':'100%'}"></p-dropdown>
 			</div>
 			<div class="ui-g-12 ui-md-2">
 				<input type="string" style="width:100%" [(ngModel)]="preferences.query.id" pInputText name="id"
-					   placeholder="ID">
+					placeholder="ID">
 			</div>
 			<div class="ui-g-12 ui-md-2">
 				<p-dropdown [options]="availableRelationships" [(ngModel)]="preferences.query.relationship"
-							placeholder="Relationship"
-							[style]="{'width':'100%'}"></p-dropdown>
+					placeholder="Relationship" [style]="{'width':'100%'}"></p-dropdown>
 			</div>
 			<div class="ui-g-12 ui-md-5">
 				<p-autoComplete [(ngModel)]="preferences.query.parameters" [minLength]="0"
-								[suggestions]="parameterSuggestions" [inputStyle]="{'width':'100%'}"
-								[style]="{'width':'100%'}"
-								(completeMethod)="suggestParameters($event)" placeholder="Parameters"></p-autoComplete>
+					[suggestions]="parameterSuggestions" [inputStyle]="{'width':'100%'}" [style]="{'width':'100%'}"
+					(completeMethod)="suggestParameters($event)" placeholder="Parameters"></p-autoComplete>
 
 
 			</div>
@@ -50,22 +47,21 @@
 			<div class="ui-g-12 ui-md-8">
 
 
-                <span style="float:right;padding-left:1em">
-                    <p-toggleButton [(ngModel)]="expandAttributes" onLabel="Attributes"
-									offLabel="Attributes"></p-toggleButton>
-                    <p-toggleButton [(ngModel)]="expandRelationships" onLabel="Relationships"
-									offLabel="Relationships"></p-toggleButton>
-                    <p-toggleButton [(ngModel)]="expandMeta" onLabel="Meta" offLabel="Meta"></p-toggleButton>
-                    <p-toggleButton [(ngModel)]="expandLinks" onLabel="Links" offLabel="Links"></p-toggleButton>
-                </span>
+				<span style="float:right;padding-left:1em">
+					<p-toggleButton [(ngModel)]="expandAttributes" onLabel="Attributes"
+						offLabel="Attributes"></p-toggleButton>
+					<p-toggleButton [(ngModel)]="expandRelationships" onLabel="Relationships"
+						offLabel="Relationships"></p-toggleButton>
+					<p-toggleButton [(ngModel)]="expandMeta" onLabel="Meta" offLabel="Meta"></p-toggleButton>
+					<p-toggleButton [(ngModel)]="expandLinks" onLabel="Links" offLabel="Links"></p-toggleButton>
+				</span>
 
 				<span style="float:right;padding-left:1em">
-                     <p-selectButton [options]="documentDisplayTypes"
-									 [(ngModel)]="documentDisplayType"></p-selectButton>
-                </span>
+					<p-selectButton [options]="documentDisplayTypes" [(ngModel)]="documentDisplayType"></p-selectButton>
+				</span>
 				<span style="float:right; padding-top:0.6em" *ngIf="documentDisplayType == 'tree'">
-                    <input type="string" [(ngModel)]="queryTerm" pInputText placeholder="Filter result...">
-                </span>
+					<input type="string" [(ngModel)]="queryTerm" pInputText placeholder="Filter result...">
+				</span>
 
 
 			</div>
@@ -73,31 +69,31 @@
 
 		<div style="font-size: 90%; font-family: 'Courier New'">
 			<p-treeTable [value]="filteredDocumentNodes" styleClass="tree-table-no-header"
-						 *ngIf="documentDisplayType != 'json'">
+				*ngIf="documentDisplayType != 'json'">
 				<p-column filter="true" field="key" header="key" [style]="{'width':'250px'}"></p-column>
 				<p-column field="value" header="value">
 					<ng-template pTemplate let-node="rowData" type="body">
-                     <span *ngIf="(node.data.key == 'id' || node.data.type == 'text') && editable">
-                        <input pInputText [(ngModel)]="node.data.value" style="width:300px"
-							   (ngModelChange)="clearDocumentText()">
-                    </span>
+						<span *ngIf="(node.data.key == 'id' || node.data.type == 'text') && editable">
+							<input pInputText [(ngModel)]="node.data.value" style="width:300px"
+								(ngModelChange)="clearDocumentText()">
+						</span>
 						<span *ngIf="node.data.type == 'url'">
-                        <a href="{{node.data.urlValue}}">{{node.data.value}}</a>
-                    </span>
+							<a href="{{node.data.urlValue}}">{{node.data.value}}</a>
+						</span>
 						<span *ngIf="node.data.type == 'text' && !editable">
-                        {{node.data.value}}
-                    </span>
+							{{node.data.value}}
+						</span>
 						<span *ngIf="node.data.type == 'query' && (!editable || node.data.key != 'id')">
-                        <a href="#" (click)="get(node.data.query)">{{node.data.value}}</a>
-                    </span>
+							<a href="#" (click)="get(node.data.query)">{{node.data.value}}</a>
+						</span>
 					</ng-template>
 				</p-column>
 			</p-treeTable>
 
 			<div *ngIf="documentDisplayType == 'json'">
 
-                <textarea *ngIf="editable" pInputTextarea [(ngModel)]="documentText" [rows]="responseRows"
-						  style="width:100%"></textarea>
+				<textarea *ngIf="editable" pInputTextarea [(ngModel)]="documentText" [rows]="responseRows"
+					style="width:100%"></textarea>
 
 				<pre *ngIf="!editable">{{documentText}}</pre>
 
@@ -108,9 +104,9 @@
 					<button pButton (click)="setupPost()" label="Setup Post"></button>
 					<button pButton (click)="post()" label="Post" [disabled]="!editable || isSingleResource()"></button>
 					<button pButton (click)="patch()" label="Patch"
-							[disabled]="!(editable && isSingleResource())"></button>
+						[disabled]="!(editable && isSingleResource())"></button>
 					<button pButton (click)="delete()" label="Delete"
-							[disabled]="!(editable && isSingleResource())"></button>
+						[disabled]="!(editable && isSingleResource())"></button>
 				</p>
 			</div>
 
@@ -164,4 +160,3 @@
 	</div>
 
 </div>
-

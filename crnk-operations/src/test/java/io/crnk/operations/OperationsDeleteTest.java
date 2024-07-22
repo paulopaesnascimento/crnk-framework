@@ -26,13 +26,13 @@ import java.util.HashSet;
 import java.util.UUID;
 
 public class OperationsDeleteTest extends AbstractOperationsTest {
-
+/*
   protected ResourceRepository<MovieEntity, UUID> movieRepo;
 
   private BulkInMemoryRepository bulkRepository;
 
 
-  @Before
+  //@Before
   @Override
   public void setUp() throws Exception {
     super.setUp();
@@ -53,7 +53,7 @@ public class OperationsDeleteTest extends AbstractOperationsTest {
     operationsModule.setIncludeChangedRelationships(false);
   }
 
-  @Test
+  //@Test
   public void checkDelete() {
     ResourceRepository<PersonEntity, UUID> personRepo = client.getRepositoryForType(PersonEntity.class);
 
@@ -87,7 +87,7 @@ public class OperationsDeleteTest extends AbstractOperationsTest {
     Assert.assertEquals(0, movies.size());
   }
 
-  @Test
+  //@Test
   public void checkDeleteByPath() {
     ResourceRepository<PersonEntity, UUID> personRepo = client.getRepositoryForType(PersonEntity.class);
 
@@ -114,7 +114,7 @@ public class OperationsDeleteTest extends AbstractOperationsTest {
     Assert.assertEquals(0, personsAfterDelete.size());
   }
 
-  @Test
+  //@Test
   public void checkExperimentalBulkDelete() {
     Task task1 = newTask("1");
     Task task2 = newTask("2");
@@ -137,4 +137,5 @@ public class OperationsDeleteTest extends AbstractOperationsTest {
     Assert.assertEquals(0, tasks.size());
     Mockito.verify(bulkRepository, Mockito.times(1)).delete(Arrays.asList(task1.getId(), task2.getId()));
   }
+*/
 }

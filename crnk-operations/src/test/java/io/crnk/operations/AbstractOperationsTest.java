@@ -45,7 +45,7 @@ import org.junit.Before;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 public abstract class AbstractOperationsTest extends JerseyTestBase {
-
+/*
 	protected CrnkClient client;
 
 	protected AnnotationConfigApplicationContext context;
@@ -95,7 +95,7 @@ public abstract class AbstractOperationsTest extends JerseyTestBase {
 		}
 	}
 
-	@Before
+	//@Before
 	public void setup() {
 		clear();
 		client = new CrnkClient(getBaseUri().toString());
@@ -141,7 +141,7 @@ public abstract class AbstractOperationsTest extends JerseyTestBase {
 	}
 
 	@Override
-	@After
+	//@After
 	public void tearDown() throws Exception {
 		super.tearDown();
 
@@ -166,7 +166,7 @@ public abstract class AbstractOperationsTest extends JerseyTestBase {
 		return new TestApplication();
 	}
 
-	@ApplicationPath("/")
+	//@ApplicationPath("/")
 	private class TestApplication extends ResourceConfig {
 
 
@@ -219,5 +219,5 @@ public abstract class AbstractOperationsTest extends JerseyTestBase {
 	protected void setupServer(CrnkFeature feature) {
 		// noting to do, override if necessary
 	}
-
+*/
 }

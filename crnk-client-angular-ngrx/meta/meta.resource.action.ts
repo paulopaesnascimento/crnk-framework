@@ -6,7 +6,7 @@ import {
 	MetaElement,
 	QMetaElement
 } from './meta.element';
-import {MetaRepositoryActionType} from './meta.repository.action.type';
+import { MetaRepositoryActionType } from './meta.repository.action.type';
 import {
 	ManyQueryResult,
 	OneQueryResult

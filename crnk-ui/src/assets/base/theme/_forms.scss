@@ -44,22 +44,22 @@ body {
 			-webkit-transition: 0.3s ease all;
 		}
 
-		input:focus ~ label,
-		input.ui-state-filled ~ label,
-		.ui-inputwrapper-focus ~ label,
-		.ui-inputwrapper-filled ~ label {
+		input:focus~label,
+		input.ui-state-filled~label,
+		.ui-inputwrapper-focus~label,
+		.ui-inputwrapper-filled~label {
 			top: -20px;
 			font-size: 12px;
 			color: $primaryColor;
 		}
 
-		.input:-webkit-autofill ~ label {
+		.input:-webkit-autofill~label {
 			top: -20px;
 			font-size: 12px;
 			color: $primaryColor;
 		}
 
-		input.ng-invalid ~ label {
+		input.ng-invalid~label {
 			color: #e62a10;
 		}
 
@@ -131,7 +131,8 @@ body {
 		}
 	}
 
-	.ui-button, .ui-datepicker-buttonpane > button {
+	.ui-button,
+	.ui-datepicker-buttonpane>button {
 		overflow: hidden;
 		background-color: $primaryColor;
 		color: #ffffff;
@@ -363,7 +364,7 @@ body {
 		-webkit-box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
 		box-shadow: 0 1px 2.5px 0 rgba(0, 0, 0, 0.26), 0 1px 5px 0 rgba(0, 0, 0, 0.16);
 
-		> .ui-button {
+		>.ui-button {
 			@include no-shadow();
 
 			&.ui-state-active {
@@ -533,7 +534,7 @@ body {
 				margin: 0 1px;
 				vertical-align: middle;
 
-				> input {
+				>input {
 					padding: 0;
 					font-size: $fontSize;
 					margin: 0;
@@ -835,7 +836,8 @@ body {
 			visibility: hidden;
 		}
 
-		.ui-inputswitch-off, .ui-inputswitch-on {
+		.ui-inputswitch-off,
+		.ui-inputswitch-on {
 			span {
 				visibility: hidden;
 			}
@@ -981,7 +983,8 @@ body {
 				padding: .25em .125em;
 				box-sizing: border-box;
 
-				a, span {
+				a,
+				span {
 					padding: .25em;
 					margin: 0;
 					text-align: center;
@@ -1003,7 +1006,9 @@ body {
 				}
 
 				&.ui-datepicker-today {
-					a, span {
+
+					a,
+					span {
 						color: #ffffff;
 						background: lighten($primaryColor, 20%);
 
@@ -1020,11 +1025,11 @@ body {
 		.ui-timepicker {
 			@include border-radius(0);
 
-			> div {
+			>div {
 				a {
 					height: 1.5em;
 
-					> span {
+					>span {
 						display: inline-block;
 						margin-bottom: .25em;
 					}
@@ -1081,7 +1086,7 @@ body {
 	}
 
 	.ui-chips {
-		> ul.ui-inputtext {
+		>ul.ui-inputtext {
 			padding: 2px 2px 1px 2px;
 
 			&.ui-state-focus {
@@ -1156,16 +1161,16 @@ body {
 
 	/* Validation */
 	.ui-inputtext.ng-dirty.ng-invalid,
-	p-dropdown.ng-dirty.ng-invalid > .ui-dropdown,
-	p-autocomplete.ng-dirty.ng-invalid > .ui-autocomplete > .ui-inputtext,
-	p-calendar.ng-dirty.ng-invalid > .ui-inputtext,
-	p-inputmask.ng-dirty.ng-invalid > .ui-inputtext,
+	p-dropdown.ng-dirty.ng-invalid>.ui-dropdown,
+	p-autocomplete.ng-dirty.ng-invalid>.ui-autocomplete>.ui-inputtext,
+	p-calendar.ng-dirty.ng-invalid>.ui-inputtext,
+	p-inputmask.ng-dirty.ng-invalid>.ui-inputtext,
 	p-checkbox.ng-dirty.ng-invalid .ui-chkbox-box,
 	p-radiobutton.ng-dirty.ng-invalid .ui-radiobutton-box,
 	p-inputswitch.ng-dirty.ng-invalid .ui-inputswitch,
 	p-listbox.ng-dirty.ng-invalid .ui-inputtext,
-	p-multiselect.ng-dirty.ng-invalid > .ui-multiselect,
-	p-spinner.ng-dirty.ng-invalid > .ui-inputtext,
+	p-multiselect.ng-dirty.ng-invalid>.ui-multiselect,
+	p-spinner.ng-dirty.ng-invalid>.ui-inputtext,
 	p-selectbutton.ng-dirty.ng-invalid .ui-button,
 	p-togglebutton.ng-dirty.ng-invalid .ui-button {
 		border-bottom-color: $invalidInputBorderColor;
@@ -1175,7 +1180,7 @@ body {
 @media (max-width: 640px) {
 	body {
 		.ui-buttonset {
-			> .ui-button {
+			>.ui-button {
 				display: block;
 				@include border-radius(0);
 

@@ -1,22 +1,35 @@
 plugins {
 	id 'java'
 	id 'java-library'
+	id 'org.springframework.boot' version '3.1.4'
+	id 'io.spring.dependency-management'
 }
 
+tasks.compileJava.dependsOn ':crnk-setup:crnk-setup-cdi:processResources'
+
 dependencies {
+    bootJar {
+    	enabled = false
+	}
+
+    jar {
+    	enabled = true
+	}
+
     implementation project(':crnk-meta')
 
     implementation 'org.reflections:reflections'
     implementation project(':crnk-gen:crnk-gen-base')
+    implementation  project(':crnk-setup:crnk-setup-spring-boot3')
+    implementation  project(':crnk-setup:crnk-setup-cdi')
     implementation project(':crnk-meta')
-
-	compileOnly 'junit:junit:4.13.1'
+    implementation 'jakarta.platform:jakarta.jakartaee-api:10.0.0'
+    //implementation  group: 'org.springframework', name: 'spring-beans', version: '6.1.8'
+   	
+    compileOnly 'junit:junit:4.13.1'
     compileOnly 'org.apache.deltaspike.modules:deltaspike-test-control-module-api:1.9.6'
     compileOnly 'org.apache.deltaspike.cdictrl:deltaspike-cdictrl-api:1.9.6'
-    compileOnly 'org.jboss.weld.se:weld-se-core:2.4.0.Final'
-    compileOnly 'org.springframework.boot:spring-boot:3.1.4'
-    compileOnly 'jakarta.platform:jakarta.jakartaee-api:10.0.0'
-
+    compileOnly 'org.jboss.weld.se:weld-se-core:5.1.2.Final'
     testImplementation  project(':crnk-meta')
     testImplementation  project(':crnk-test')
     testImplementation  project(':crnk-setup:crnk-setup-cdi')
@@ -29,5 +42,5 @@ dependencies {
     testImplementation  'org.apache.deltaspike.cdictrl:deltaspike-cdictrl-weld:1.9.6'
     testImplementation  'org.jboss.weld.se:weld-se-core:2.4.0.Final'
     testImplementation  'jakarta.platform:jakarta.jakartaee-api:10.0.0'
-    testImplementation  'org.springframework.boot:spring-boot:3.1.4'
+    //testImplementation  group: 'org.springframework', name: 'spring-beans', version: '6.1.8'
 }

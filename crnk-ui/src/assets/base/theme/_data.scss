@@ -61,7 +61,8 @@ body {
 						vertical-align: top;
 					}
 
-					.ui-chkbox, .ui-chkbox * {
+					.ui-chkbox,
+					.ui-chkbox * {
 						box-sizing: content-box;
 					}
 				}
@@ -116,7 +117,7 @@ body {
 		background-color: $primaryDarkColor;
 		padding: $headerPadding;
 
-		> a {
+		>a {
 			box-sizing: border-box;
 			color: #ffffff;
 
@@ -201,6 +202,7 @@ body {
 	}
 
 	.ui-datatable {
+
 		.ui-datatable-header,
 		.ui-datatable-footer {
 			padding: $headerPadding;
@@ -249,7 +251,8 @@ body {
 					color: $textSecondaryColor;
 				}
 
-				&.ui-state-active, &.ui-state-highlight {
+				&.ui-state-active,
+				&.ui-state-highlight {
 					background-color: $accentColor;
 					color: $accentTextColor;
 					border-top-color: $accentColor;
@@ -335,7 +338,9 @@ body {
 					}
 
 					&.ui-selection-column {
-						.ui-chkbox-box, .ui-radiobutton-box {
+
+						.ui-chkbox-box,
+						.ui-radiobutton-box {
 							box-sizing: content-box;
 						}
 					}
@@ -414,7 +419,9 @@ body {
 		}
 
 		&.ui-datatable-scrollable {
-			.ui-datatable-scrollable-header, .ui-datatable-scrollable-footer {
+
+			.ui-datatable-scrollable-header,
+			.ui-datatable-scrollable-footer {
 				border: 0 none;
 				background-color: transparent;
 
@@ -666,7 +673,9 @@ body {
 		}
 
 		&.ui-treetable-scrollable {
-			.ui-treetable-scrollable-header, .ui-treetable-scrollable-footer {
+
+			.ui-treetable-scrollable-header,
+			.ui-treetable-scrollable-footer {
 				background-color: transparent;
 				border: 0 none;
 			}
@@ -704,15 +713,18 @@ body {
 						@include icon-override("play_arrow");
 						@include rotate(90deg);
 					}
+
 					.fa-angle-double-right {
 						@include icon-override("skip_previous");
 						@include rotate(-90deg);
 
 					}
+
 					.fa-angle-left {
 						@include icon-override("play_arrow");
 						@include rotate(-90deg);
 					}
+
 					.fa-angle-double-left {
 						@include icon-override("skip_next");
 						@include rotate(-90deg);

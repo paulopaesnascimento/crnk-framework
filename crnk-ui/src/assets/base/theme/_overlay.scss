@@ -26,7 +26,8 @@ body {
 				text-align: center;
 				margin-top: .5em;
 
-				&.ui-state-hover, &.ui-state-focus {
+				&.ui-state-hover,
+				&.ui-state-focus {
 					@include hover-element();
 				}
 
@@ -49,7 +50,8 @@ body {
 			padding: $contentPadding;
 		}
 
-		.ui-dialog-buttonpane, .ui-dialog-footer {
+		.ui-dialog-buttonpane,
+		.ui-dialog-footer {
 			text-align: right;
 
 			.ui-button {
@@ -102,7 +104,9 @@ body {
 		}
 
 		.ui-lightbox-content-wrapper {
-			.ui-lightbox-nav-right, .ui-lightbox-nav-left {
+
+			.ui-lightbox-nav-right,
+			.ui-lightbox-nav-left {
 				top: 40%;
 
 				.fa {

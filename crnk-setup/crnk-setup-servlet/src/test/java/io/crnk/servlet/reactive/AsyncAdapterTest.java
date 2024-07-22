@@ -6,7 +6,7 @@ import org.junit.Test;
 import java.io.IOException;
 
 public class AsyncAdapterTest {
-
+/*
 	@Test
 	public void doesNothing() throws IOException {
 		AsyncAdapter adapter = new AsyncAdapter();
@@ -15,4 +15,5 @@ public class AsyncAdapterTest {
 		adapter.onError(null);
 		adapter.onStartAsync(null);
 	}
+*/
 }

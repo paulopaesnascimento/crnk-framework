@@ -1,9 +1,9 @@
 import 'rxjs/add/operator/merge';
 
 
-import {MetaAttribute, QMetaAttribute} from '../meta/meta.attribute';
-import {BeanBinding} from '../expression/crnk.expression';
-import {ArrayPath, MapPath, NumberPath, StringPath} from "../expression";
+import { MetaAttribute, QMetaAttribute } from '../meta/meta.attribute';
+import { BeanBinding } from '../expression/crnk.expression';
+import { ArrayPath, MapPath, NumberPath, StringPath } from "../expression";
 
 it('ArrayPath accessor', () => {
 	const arrayBean = {
@@ -71,8 +71,8 @@ describe('BeanPath accessor', () => {
 			},
 			relationships: {
 				type: {
-					data: {type: 'testType', id: 'testId'},
-					reference: {type: 'testType', id: 'testId', attributes: {name: 'testName'}},
+					data: { type: 'testType', id: 'testId' },
+					reference: { type: 'testType', id: 'testId', attributes: { name: 'testName' } },
 				}
 			}
 		};
