@@ -3,7 +3,7 @@ package io.crnk.spring.setup.core;
 import io.crnk.core.engine.information.resource.ResourceField;
 import io.crnk.core.engine.registry.RegistryEntry;
 import io.crnk.core.engine.registry.ResourceRegistry;
-import io.crnk.spring.app.BasicSpringBoot3Application;
+import io.crnk.spring.app.BasicSpringBoot2Application;
 import io.crnk.test.mock.models.RenamedIdResource;
 import org.junit.Assert;
 import org.junit.Test;
@@ -16,7 +16,7 @@ import org.springframework.test.context.TestPropertySource;
 import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = BasicSpringBoot3Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+@SpringBootTest(classes = BasicSpringBoot2Application.class, webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @DirtiesContext
 @TestPropertySource(properties = {"crnk.enforceIdName=false"})
 public class SpringEnforceIdNameDisabledTest {

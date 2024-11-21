@@ -15,14 +15,14 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.boot.web.servlet.error.ErrorAttributes;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.web.servlet.DispatcherServlet;
 
 import jakarta.servlet.Servlet;
 import java.util.List;
 
 
-@Configuration
+@AutoConfiguration
 @ConditionalOnProperty(prefix = "crnk.spring.mvc", name = "errorController", havingValue = "true", matchIfMissing = true)
 @ConditionalOnWebApplication
 @ConditionalOnClass({Servlet.class, DispatcherServlet.class, ErrorMvcAutoConfiguration.class})

@@ -13,10 +13,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @EnableAutoConfiguration
 @Import({CrnkCoreAutoConfiguration.class, CrnkJpaAutoConfiguration.class, ModuleConfig.class})
-public class BasicSpringBoot3Application {
+public class BasicSpringBoot2Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BasicSpringBoot3Application.class, args);
+		SpringApplication.run(BasicSpringBoot2Application.class, args);
 	}
 
 	@RequestMapping("/api/custom")

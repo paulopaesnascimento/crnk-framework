@@ -17,7 +17,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.context.annotation.Import;
 
 import jakarta.persistence.EntityManager;
@@ -36,7 +36,7 @@ import java.util.List;
  * <p>
  * This configuration class will activate <em>after</em> the Hibernate auto-configuration.
  */
-@Configuration
+@AutoConfiguration
 @ConditionalOnProperty(prefix = "crnk.jpa", name = "enabled", havingValue = "true", matchIfMissing = true)
 @ConditionalOnClass(JpaModule.class)
 @ConditionalOnMissingBean(JpaModule.class)
